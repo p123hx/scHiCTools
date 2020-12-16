@@ -19,9 +19,9 @@ int _res_change(int length, int res) {
 }
 
 pair<set<string>, map<string, int>>
-get_chromosome_lengths(const string &ref_str, const string &chromosomes, set<string> chrom_set) {
+get_chromosome_lengths(const string &ref_str, const string &chromosomes, set<string> chrom_set,int res = 1) {
 //path is in the same folder
-int res = 1;
+
     map<string, int> length;
     ifstream fin;
     string filename = "reference_genome/" + ref_str;
@@ -63,9 +63,8 @@ int res = 1;
 
 //ref_map: char int or string int
 pair<set<string>, map<string, int>>
-get_chromosome_lengths(map<string, int> ref_map, string chromosomes, set<string> chrom_set) {
+get_chromosome_lengths(map<string, int> ref_map, string chromosomes, set<string> chrom_set,int res = 1) {
     map<string, int> length;
-    int res = 1;
     set<string> chroms;
     for (auto it = ref_map.begin(); it != ref_map.end(); it++) {
         length.insert(pair<string, int>(it->first, _res_change(it->second, res)));
