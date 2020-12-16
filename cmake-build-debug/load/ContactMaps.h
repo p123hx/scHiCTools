@@ -1,0 +1,8 @@
+//
+// Created by Bean Juice on 16/12/2020.
+//
+
+#ifndef SCHICTOOLS_CONTACTMAPS_H
+#define SCHICTOOLS_CONTACTMAPS_H
+
+#endif //SCHICTOOLS_CONTACTMAPS_H

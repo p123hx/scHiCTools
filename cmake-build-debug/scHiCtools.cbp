@@ -80,6 +80,24 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/ContactMaps.cpp">
+			<Option target="scHiCtools"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/ContactMaps.h">
+			<Option target="scHiCtools"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/load_hic_file.cpp">
+			<Option target="scHiCtools"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/load_hic_file.h">
+			<Option target="scHiCtools"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/straw.cpp">
+			<Option target="scHiCtools"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/straw.h">
+			<Option target="scHiCtools"/>
+		</Unit>
 		<Unit filename="/Users/bj/CLionProjects/scHiCtools/main.cpp">
 			<Option target="scHiCtools"/>
 		</Unit>

@@ -123,6 +123,87 @@ scHiCtools/fast:
 	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/build
 .PHONY : scHiCtools/fast
 
+load/ContactMaps.o: load/ContactMaps.cpp.o
+
+.PHONY : load/ContactMaps.o
+
+# target to build an object file
+load/ContactMaps.cpp.o:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o
+.PHONY : load/ContactMaps.cpp.o
+
+load/ContactMaps.i: load/ContactMaps.cpp.i
+
+.PHONY : load/ContactMaps.i
+
+# target to preprocess a source file
+load/ContactMaps.cpp.i:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.i
+.PHONY : load/ContactMaps.cpp.i
+
+load/ContactMaps.s: load/ContactMaps.cpp.s
+
+.PHONY : load/ContactMaps.s
+
+# target to generate assembly for a file
+load/ContactMaps.cpp.s:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.s
+.PHONY : load/ContactMaps.cpp.s
+
+load/load_hic_file.o: load/load_hic_file.cpp.o
+
+.PHONY : load/load_hic_file.o
+
+# target to build an object file
+load/load_hic_file.cpp.o:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o
+.PHONY : load/load_hic_file.cpp.o
+
+load/load_hic_file.i: load/load_hic_file.cpp.i
+
+.PHONY : load/load_hic_file.i
+
+# target to preprocess a source file
+load/load_hic_file.cpp.i:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.i
+.PHONY : load/load_hic_file.cpp.i
+
+load/load_hic_file.s: load/load_hic_file.cpp.s
+
+.PHONY : load/load_hic_file.s
+
+# target to generate assembly for a file
+load/load_hic_file.cpp.s:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.s
+.PHONY : load/load_hic_file.cpp.s
+
+load/straw.o: load/straw.cpp.o
+
+.PHONY : load/straw.o
+
+# target to build an object file
+load/straw.cpp.o:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/straw.cpp.o
+.PHONY : load/straw.cpp.o
+
+load/straw.i: load/straw.cpp.i
+
+.PHONY : load/straw.i
+
+# target to preprocess a source file
+load/straw.cpp.i:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/straw.cpp.i
+.PHONY : load/straw.cpp.i
+
+load/straw.s: load/straw.cpp.s
+
+.PHONY : load/straw.s
+
+# target to generate assembly for a file
+load/straw.cpp.s:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/straw.cpp.s
+.PHONY : load/straw.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... scHiCtools"
+	@echo "... load/ContactMaps.o"
+	@echo "... load/ContactMaps.i"
+	@echo "... load/ContactMaps.s"
+	@echo "... load/load_hic_file.o"
+	@echo "... load/load_hic_file.i"
+	@echo "... load/load_hic_file.s"
+	@echo "... load/straw.o"
+	@echo "... load/straw.i"
+	@echo "... load/straw.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
