@@ -123,6 +123,33 @@ scHiCtools/fast:
 	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/build
 .PHONY : scHiCtools/fast
 
+embedding/reproducibility.o: embedding/reproducibility.cpp.o
+
+.PHONY : embedding/reproducibility.o
+
+# target to build an object file
+embedding/reproducibility.cpp.o:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.o
+.PHONY : embedding/reproducibility.cpp.o
+
+embedding/reproducibility.i: embedding/reproducibility.cpp.i
+
+.PHONY : embedding/reproducibility.i
+
+# target to preprocess a source file
+embedding/reproducibility.cpp.i:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.i
+.PHONY : embedding/reproducibility.cpp.i
+
+embedding/reproducibility.s: embedding/reproducibility.cpp.s
+
+.PHONY : embedding/reproducibility.s
+
+# target to generate assembly for a file
+embedding/reproducibility.cpp.s:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.s
+.PHONY : embedding/reproducibility.cpp.s
+
 load/ContactMaps.o: load/ContactMaps.cpp.o
 
 .PHONY : load/ContactMaps.o
@@ -240,6 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... scHiCtools"
+	@echo "... embedding/reproducibility.o"
+	@echo "... embedding/reproducibility.i"
+	@echo "... embedding/reproducibility.s"
 	@echo "... load/ContactMaps.o"
 	@echo "... load/ContactMaps.i"
 	@echo "... load/ContactMaps.s"

@@ -5,7 +5,7 @@
 		<Option title="scHiCtools"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\xtl\;CMake Files\..\..\..\..\usr\local\lib\cmake\xtensor\;CMake Files\..\..\..\..\usr\local\lib\cmake\TBB\;CMake Files\..\..\opt\;CMake Files\..\..\opt\anaconda3\;CMake Files\..\..\opt\anaconda3\lib\;CMake Files\..\..\opt\anaconda3\lib\cmake\;CMake Files\..\..\opt\anaconda3\lib\cmake\xtensor-blas\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug"/>
@@ -44,8 +44,10 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add option="-DHAVE_CBLAS=1"/>
+					<Add directory="/Users/bj/opt/anaconda3/include"/>
 					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
@@ -65,8 +67,10 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add option="-DHAVE_CBLAS=1"/>
+					<Add directory="/Users/bj/opt/anaconda3/include"/>
 					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
@@ -80,22 +84,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/ContactMaps.cpp">
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.cpp">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/ContactMaps.h">
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.h">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/load_hic_file.cpp">
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/ContactMaps.cpp">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/load_hic_file.h">
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/ContactMaps.h">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/straw.cpp">
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/load_hic_file.cpp">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/straw.h">
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/load_hic_file.h">
+			<Option target="scHiCtools"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/straw.cpp">
+			<Option target="scHiCtools"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/straw.h">
 			<Option target="scHiCtools"/>
 		</Unit>
 		<Unit filename="/Users/bj/CLionProjects/scHiCtools/main.cpp">
@@ -103,6 +113,39 @@
 		</Unit>
 		<Unit filename="/Users/bj/CLionProjects/scHiCtools/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../../../usr/local/lib/cmake/xtl/xtlConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\xtl\"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../../../usr/local/lib/cmake/xtl/xtlConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\xtl\"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../../../usr/local/lib/cmake/xtl/xtlTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\xtl\"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../../../usr/local/lib/cmake/xtensor/xtensorConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\xtensor\"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../../../usr/local/lib/cmake/xtensor/xtensorConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\xtensor\"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../../../usr/local/lib/cmake/xtensor/xtensorTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\xtensor\"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../../../usr/local/lib/cmake/TBB/TBBConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\TBB\"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../../../usr/local/lib/cmake/TBB/TBBConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\TBB\"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../opt/anaconda3/lib/cmake/xtensor-blas/xtensor-blasConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\opt\anaconda3\lib\cmake\xtensor-blas\"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../opt/anaconda3/lib/cmake/xtensor-blas/xtensor-blasConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\opt\anaconda3\lib\cmake\xtensor-blas\"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../opt/anaconda3/lib/cmake/xtensor-blas/xtensor-blasTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\opt\anaconda3\lib\cmake\xtensor-blas\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

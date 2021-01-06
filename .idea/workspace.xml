@@ -12,13 +12,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="364857e1-62bc-4fd6-a1e8-6a826123fe46" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedding/reproducibility.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/embedding/reproducibility.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/load/ContactMaps.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/ContactMaps.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/load/ContactMaps.h" beforeDir="false" afterPath="$PROJECT_DIR$/load/ContactMaps.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/load/load_hic_file.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/load_hic_file.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/load/load_hic_file.h" beforeDir="false" afterPath="$PROJECT_DIR$/load/load_hic_file.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/load/straw.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/straw.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/load/straw.h" beforeDir="false" afterPath="$PROJECT_DIR$/load/straw.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/scHiCtools.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/scHiCtools.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +62,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CMake" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/cmake-build-debug/load" />
     </key>
   </component>
@@ -71,7 +91,26 @@
       <workItem from="1608042589096" duration="2632000" />
       <workItem from="1608080084752" duration="265000" />
       <workItem from="1608091597758" duration="8373000" />
-      <workItem from="1608136718067" duration="4356000" />
+      <workItem from="1608136718067" duration="15724000" />
+      <workItem from="1608212739935" duration="675000" />
+      <workItem from="1608380282965" duration="593000" />
+      <workItem from="1608387752108" duration="2427000" />
+      <workItem from="1608646034349" duration="7705000" />
+      <workItem from="1608902547762" duration="598000" />
+      <workItem from="1608929609199" duration="4047000" />
+      <workItem from="1608993011365" duration="4616000" />
+      <workItem from="1609012459899" duration="814000" />
+      <workItem from="1609115988937" duration="1402000" />
+      <workItem from="1609213630334" duration="2138000" />
+      <workItem from="1609250253908" duration="2973000" />
+      <workItem from="1609291363819" duration="667000" />
+      <workItem from="1609309020840" duration="4000" />
+      <workItem from="1609513443397" duration="1417000" />
+      <workItem from="1609549143315" duration="31000" />
+      <workItem from="1609595679187" duration="4822000" />
+      <workItem from="1609812644150" duration="597000" />
+      <workItem from="1609856902268" duration="5102000" />
+      <workItem from="1609942201859" duration="8012000" />
     </task>
     <servers />
   </component>
@@ -79,17 +118,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="0" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608151190010">
+      <screen x="0" y="25" width="1920" height="981" />
+    </state>
+    <state x="0" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1608151190010" />
     <state x="676" y="347" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608095921770">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="676" y="347" key="#com.intellij.fileTypes.FileTypeChooser/1920.522.1792.1120/0.0.1920.1080@0.0.1920.1080" timestamp="1608095921770" />
+    <state x="264" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1609595787618">
+      <screen x="0" y="25" width="1920" height="981" />
+    </state>
+    <state x="264" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1609595787618" />
     <state x="1167" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608043951271">
       <screen x="0" y="25" width="1920" height="981" />
     </state>
     <state x="1167" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1608043951271" />
-    <state x="250" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1608136796069">
+    <state x="24" y="151" key="SettingsEditor" timestamp="1608931859683">
       <screen x="0" y="25" width="1920" height="981" />
     </state>
-    <state x="250" y="344" key="com.intellij.ide.util.TipDialog/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1608136796069" />
+    <state x="24" y="151" key="SettingsEditor/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1608931859683" />
+    <state x="250" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1609857623324">
+      <screen x="0" y="25" width="1920" height="981" />
+    </state>
+    <state x="250" y="351" key="com.intellij.ide.util.TipDialog/1920.522.1792.1120/0.0.1920.1080@0.0.1920.1080" timestamp="1609513443580" />
+    <state x="250" y="344" key="com.intellij.ide.util.TipDialog/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1609857623324" />
   </component>
 </project>

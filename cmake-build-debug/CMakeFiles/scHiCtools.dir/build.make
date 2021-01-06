@@ -70,48 +70,62 @@ CMakeFiles/scHiCtools.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scHiCtools.dir/main.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bj/CLionProjects/scHiCtools/main.cpp -o CMakeFiles/scHiCtools.dir/main.cpp.s
 
+CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.o: CMakeFiles/scHiCtools.dir/flags.make
+CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.o: ../embedding/reproducibility.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.o -c /Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.cpp
+
+CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.cpp > CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.i
+
+CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.cpp -o CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.s
+
 CMakeFiles/scHiCtools.dir/load/straw.cpp.o: CMakeFiles/scHiCtools.dir/flags.make
-CMakeFiles/scHiCtools.dir/load/straw.cpp.o: load/straw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/scHiCtools.dir/load/straw.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scHiCtools.dir/load/straw.cpp.o -c /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/straw.cpp
+CMakeFiles/scHiCtools.dir/load/straw.cpp.o: ../load/straw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/scHiCtools.dir/load/straw.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scHiCtools.dir/load/straw.cpp.o -c /Users/bj/CLionProjects/scHiCtools/load/straw.cpp
 
 CMakeFiles/scHiCtools.dir/load/straw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scHiCtools.dir/load/straw.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/straw.cpp > CMakeFiles/scHiCtools.dir/load/straw.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bj/CLionProjects/scHiCtools/load/straw.cpp > CMakeFiles/scHiCtools.dir/load/straw.cpp.i
 
 CMakeFiles/scHiCtools.dir/load/straw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scHiCtools.dir/load/straw.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/straw.cpp -o CMakeFiles/scHiCtools.dir/load/straw.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bj/CLionProjects/scHiCtools/load/straw.cpp -o CMakeFiles/scHiCtools.dir/load/straw.cpp.s
 
 CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o: CMakeFiles/scHiCtools.dir/flags.make
-CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o: load/ContactMaps.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o -c /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/ContactMaps.cpp
+CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o: ../load/ContactMaps.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o -c /Users/bj/CLionProjects/scHiCtools/load/ContactMaps.cpp
 
 CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/ContactMaps.cpp > CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bj/CLionProjects/scHiCtools/load/ContactMaps.cpp > CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.i
 
 CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/ContactMaps.cpp -o CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bj/CLionProjects/scHiCtools/load/ContactMaps.cpp -o CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.s
 
 CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o: CMakeFiles/scHiCtools.dir/flags.make
-CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o: load/load_hic_file.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o -c /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/load_hic_file.cpp
+CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o: ../load/load_hic_file.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o -c /Users/bj/CLionProjects/scHiCtools/load/load_hic_file.cpp
 
 CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/load_hic_file.cpp > CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bj/CLionProjects/scHiCtools/load/load_hic_file.cpp > CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.i
 
 CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/load/load_hic_file.cpp -o CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bj/CLionProjects/scHiCtools/load/load_hic_file.cpp -o CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.s
 
 # Object files for target scHiCtools
 scHiCtools_OBJECTS = \
 "CMakeFiles/scHiCtools.dir/main.cpp.o" \
+"CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.o" \
 "CMakeFiles/scHiCtools.dir/load/straw.cpp.o" \
 "CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o" \
 "CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o"
@@ -120,12 +134,13 @@ scHiCtools_OBJECTS = \
 scHiCtools_EXTERNAL_OBJECTS =
 
 scHiCtools: CMakeFiles/scHiCtools.dir/main.cpp.o
+scHiCtools: CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.o
 scHiCtools: CMakeFiles/scHiCtools.dir/load/straw.cpp.o
 scHiCtools: CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o
 scHiCtools: CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o
 scHiCtools: CMakeFiles/scHiCtools.dir/build.make
 scHiCtools: CMakeFiles/scHiCtools.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable scHiCtools"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable scHiCtools"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/scHiCtools.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

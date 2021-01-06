@@ -1,5 +1,30 @@
 cmake_minimum_required(VERSION 3.15)
 project(scHiCtools)
+add_definitions(-DHAVE_CBLAS=1)
+find_package(BLAS REQUIRED)
+find_package(LAPACK REQUIRED)
+find_package(xtl REQUIRED)
+find_package(xtensor REQUIRED)
+find_package(xtensor-blas REQUIRED)
 
-set(CMAKE_CXX_STANDARD 14)
-add_executable(scHiCtools main.cpp cmake-build-debug/load/straw.cpp cmake-build-debug/load/straw.h cmake-build-debug/load/ContactMaps.cpp cmake-build-debug/load/ContactMaps.h cmake-build-debug/load/load_hic_file.cpp cmake-build-debug/load/load_hic_file.h)
+add_executable(scHiCtools main.cpp embedding/reproducibility.cpp embedding/reproducibility.h load/straw.cpp load/straw.h load/ContactMaps.cpp load/ContactMaps.h load/load_hic_file.cpp load/load_hic_file.h)
+if(MSVC)
+    set(CMAKE_EXE_LINKER_FLAGS /MANIFEST:NO)
+endif()
+target_link_libraries(scHiCtools xtensor xtensor::optimize -march=native xtensor-blas octave)
+
+
+
+if (WIN32)
+    find_package(OpenBLAS REQUIRED)
+    set(BLAS_LIBRARIES ${CMAKE_INSTALL_PREFIX}${OpenBLAS_LIBRARIES})
+else()
+    find_package(BLAS REQUIRED)
+    find_package(LAPACK REQUIRED)
+endif()
+
+message(STATUS "BLAS VENDOR:    " ${BLA_VENDOR})
+message(STATUS "BLAS LIBRARIES: " ${BLAS_LIBRARIES})
+
+target_link_libraries(scHiCtools ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES})
+target_include_directories(scHiCtools PRIVATE ${xtensor_blas_INCLUDE_DIRS})
