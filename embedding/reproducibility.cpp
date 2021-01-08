@@ -1,17 +1,11 @@
 
 //
-// Created by Bean Juice on 16/12/2020.
+// Created by Hongxi on 16/12/2020.
 //
-
-#include "reproducibility.h"
-
 #include <utility>
-#include "xtensor/xarray.hpp"
 #include "xtensor/xio.hpp"
 #include "xtensor/xview.hpp"
-#include "xtensor/xadapt.hpp"
 #include "xtensor-blas/xlinalg.hpp"
-
 
 using namespace std;
 using namespace std::chrono;
@@ -71,7 +65,7 @@ pairwise_distance(xt::xarray<xt::xarray<double>> all_strata, string similarity_m
         for (xt::xarray<double> stratum : all_strata) {
             xt::xarray<double> z = zscore_prop(stratum, 1);
             //??
-            z[isnan(z)] = 0;
+            z[xt::isnan(z)] = 0;
             tmp(index) = z;
             index++;
         }
@@ -80,7 +74,7 @@ pairwise_distance(xt::xarray<xt::xarray<double>> all_strata, string similarity_m
         xt::xarray<double> inner = xt::linalg::dot(zscores, xt::transpose(zscores));
         inner[inner > 1] = 1;
         inner[inner < -1] = -1;
-        xt::xarray<double> distance_mat = xt::sqrt(2 - 2 * inner);
+        distance_mat = xt::sqrt(2 - 2 * inner);
         t2 = high_resolution_clock::now();
     } else if (similarity_method == "hicrep") {
 
@@ -105,28 +99,29 @@ pairwise_distance(xt::xarray<xt::xarray<double>> all_strata, string similarity_m
     } else if (similarity_method == "old_hicrep") {
 
         xt::xarray<double> similarity = xt::ones<double>({n_cells, n_bins});
-        int ind_old=0;
+        int ind_old = 0;
         for (int i = 0; i < n_cells; i++) {
             for (int j = i + 1; j < n_cells; j++) {
-                xt::xarray<double> corrs, weights = xt::empty<double>({1,all_size});
+                xt::xarray<double> corrs, weights = xt::empty<double>({1, all_size});
                 for (auto stratum : all_strata) {
 
                     xt::xarray<double> s1 = xt::row(stratum, i);
                     xt::xarray<double> s2 = xt::row(stratum, j);
                     if (xt::variance(s1)() == 0 or xt::variance(s2)() == 0) {
-                        weights(ind_old)=0;
-                        corrs(ind_old)=0;
+                        weights(ind_old) = 0;
+                        corrs(ind_old) = 0;
                     } else {
-                        weights(ind_old)=(n_bins * xt::stddev(s1)() * xt::stddev(s2)());
-                        corrs(ind_old)=(pearsoncoeff(s1, s2, n_bins));
+                        weights(ind_old) = (n_bins * xt::stddev(s1)() *
+                                            xt::stddev(s2)());
+                        corrs(ind_old) = (pearsoncoeff(s1, s2, n_bins));
 
                     }
                     ind_old++;
                 }
                 corrs = xt::nan_to_num(corrs);
                 double s = xt::linalg::dot(corrs, weights)() / (xt::sum(weights)());
-                similarity[i, j] = s;
-                similarity[j, i] = s;
+                similarity(i, j) = s;
+                similarity(i, j) = s;
             }
         }
         t1 = high_resolution_clock::now();
@@ -135,16 +130,18 @@ pairwise_distance(xt::xarray<xt::xarray<double>> all_strata, string similarity_m
     } else if (similarity_method == "selfish") {
         int n_windows = n_bins / window_size;
         xt::xarray<double> all_windows = xt::zeros<double>({n_cells, n_bins});
-        int i = 0;
+        int stra_i = 0;
         for (auto stratum : all_strata) {
             for (int j = 0; j < n_windows; j++) {
 
                 xt::col(all_windows, j) += xt::sum(xt::view(stratum, xt::all(),
                                                             xt::range(j * window_size,
                                                                       (j + 1) *
-                                                                      window_size - i)),
+                                                                      window_size -
+                                                                      stra_i)),
                                                    1);
             }
+            stra_i++;
         }
         t1 = high_resolution_clock::now();
 

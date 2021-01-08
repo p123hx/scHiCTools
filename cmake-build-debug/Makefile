@@ -123,6 +123,33 @@ scHiCtools/fast:
 	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/build
 .PHONY : scHiCtools/fast
 
+embedding/embedding.o: embedding/embedding.cpp.o
+
+.PHONY : embedding/embedding.o
+
+# target to build an object file
+embedding/embedding.cpp.o:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/embedding/embedding.cpp.o
+.PHONY : embedding/embedding.cpp.o
+
+embedding/embedding.i: embedding/embedding.cpp.i
+
+.PHONY : embedding/embedding.i
+
+# target to preprocess a source file
+embedding/embedding.cpp.i:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/embedding/embedding.cpp.i
+.PHONY : embedding/embedding.cpp.i
+
+embedding/embedding.s: embedding/embedding.cpp.s
+
+.PHONY : embedding/embedding.s
+
+# target to generate assembly for a file
+embedding/embedding.cpp.s:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/embedding/embedding.cpp.s
+.PHONY : embedding/embedding.cpp.s
+
 embedding/reproducibility.o: embedding/reproducibility.cpp.o
 
 .PHONY : embedding/reproducibility.o
@@ -258,6 +285,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+test/test_reproducibility.o: test/test_reproducibility.cpp.o
+
+.PHONY : test/test_reproducibility.o
+
+# target to build an object file
+test/test_reproducibility.cpp.o:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o
+.PHONY : test/test_reproducibility.cpp.o
+
+test/test_reproducibility.i: test/test_reproducibility.cpp.i
+
+.PHONY : test/test_reproducibility.i
+
+# target to preprocess a source file
+test/test_reproducibility.cpp.i:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.i
+.PHONY : test/test_reproducibility.cpp.i
+
+test/test_reproducibility.s: test/test_reproducibility.cpp.s
+
+.PHONY : test/test_reproducibility.s
+
+# target to generate assembly for a file
+test/test_reproducibility.cpp.s:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.s
+.PHONY : test/test_reproducibility.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -267,6 +321,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... scHiCtools"
+	@echo "... embedding/embedding.o"
+	@echo "... embedding/embedding.i"
+	@echo "... embedding/embedding.s"
 	@echo "... embedding/reproducibility.o"
 	@echo "... embedding/reproducibility.i"
 	@echo "... embedding/reproducibility.s"
@@ -282,6 +339,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... test/test_reproducibility.o"
+	@echo "... test/test_reproducibility.i"
+	@echo "... test/test_reproducibility.s"
 .PHONY : help
 
 
