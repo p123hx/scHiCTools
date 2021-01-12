@@ -12,11 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="364857e1-62bc-4fd6-a1e8-6a826123fe46" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/embedding/embedding.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/embedding/embedding.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_reproducibility.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/load/processing_utils.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/load/processing_utils.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/DependInfo.cmake" afterDir="false" />
@@ -26,12 +26,9 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/scHiCtools.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/scHiCtools.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/embedding/reproducibility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/embedding/reproducibility.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/embedding/reproducibility.h" beforeDir="false" afterPath="$PROJECT_DIR$/embedding/reproducibility.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load/ContactMaps.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/ContactMaps.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load/ContactMaps.h" beforeDir="false" afterPath="$PROJECT_DIR$/load/ContactMaps.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/embedding/embedding.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/embedding/embedding.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/load/load_hic_file.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/load_hic_file.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load/load_hic_file.h" beforeDir="false" afterPath="$PROJECT_DIR$/load/load_hic_file.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_reproducibility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_reproducibility.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +118,14 @@
       <workItem from="1610113977650" duration="2369000" />
       <workItem from="1610120449968" duration="4519000" />
       <workItem from="1610128807196" duration="113000" />
+      <workItem from="1610136138052" duration="329000" />
+      <workItem from="1610151998594" duration="3952000" />
+      <workItem from="1610157684695" duration="639000" />
+      <workItem from="1610327989491" duration="628000" />
+      <workItem from="1610375601199" duration="329000" />
+      <workItem from="1610382729165" duration="529000" />
+      <workItem from="1610398218906" duration="2935000" />
+      <workItem from="1610410955225" duration="1974000" />
     </task>
     <servers />
   </component>
@@ -153,13 +158,13 @@
     </state>
     <state x="110" y="149" key="SettingsEditor/1920.522.1792.1120/0.0.1920.1080@0.0.1920.1080" timestamp="1609998682082" />
     <state x="110" y="160" key="SettingsEditor/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1609997944952" />
-    <state x="250" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1610128808761">
+    <state x="250" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1610152660575">
       <screen x="0" y="25" width="1920" height="981" />
     </state>
     <state x="250" y="351" key="com.intellij.ide.util.TipDialog/1920.522.1792.1120/0.0.1920.1080@0.0.1920.1080" timestamp="1610036504085" />
     <state x="250" y="351" key="com.intellij.ide.util.TipDialog/1920.547.1792.1095/0.0.1920.1006@0.0.1920.1006" timestamp="1610028776890" />
     <state x="250" y="351" key="com.intellij.ide.util.TipDialog/1920.547.1792.1095/0.0.1920.1080@0.0.1920.1080" timestamp="1610071179635" />
-    <state x="250" y="344" key="com.intellij.ide.util.TipDialog/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1610128808761" />
+    <state x="250" y="344" key="com.intellij.ide.util.TipDialog/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1610152660575" />
     <state x="1192" y="25" width="728" height="961" key="dock-window-1" timestamp="1610088864213">
       <screen x="0" y="25" width="1920" height="981" />
     </state>

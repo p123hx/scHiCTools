@@ -231,6 +231,33 @@ load/load_hic_file.cpp.s:
 	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.s
 .PHONY : load/load_hic_file.cpp.s
 
+load/processing_utils.o: load/processing_utils.cpp.o
+
+.PHONY : load/processing_utils.o
+
+# target to build an object file
+load/processing_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o
+.PHONY : load/processing_utils.cpp.o
+
+load/processing_utils.i: load/processing_utils.cpp.i
+
+.PHONY : load/processing_utils.i
+
+# target to preprocess a source file
+load/processing_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.i
+.PHONY : load/processing_utils.cpp.i
+
+load/processing_utils.s: load/processing_utils.cpp.s
+
+.PHONY : load/processing_utils.s
+
+# target to generate assembly for a file
+load/processing_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.s
+.PHONY : load/processing_utils.cpp.s
+
 load/straw.o: load/straw.cpp.o
 
 .PHONY : load/straw.o
@@ -333,6 +360,9 @@ help:
 	@echo "... load/load_hic_file.o"
 	@echo "... load/load_hic_file.i"
 	@echo "... load/load_hic_file.s"
+	@echo "... load/processing_utils.o"
+	@echo "... load/processing_utils.i"
+	@echo "... load/processing_utils.s"
 	@echo "... load/straw.o"
 	@echo "... load/straw.i"
 	@echo "... load/straw.s"

@@ -10,7 +10,7 @@
 #include <fstream>
 #include <iostream>
 #include <list>
-
+#include "processing_utils.h"
 using namespace std;
 
 static string my_path = "";
@@ -19,12 +19,21 @@ int _res_change(int length, int res) {
     return ceil(length / res);
 }
 
-vector<int> file_line_generator(string file, vector<int> format = vector<int>(), string
-chrom = "", int header = 0, int resolution = 1, bool resolution_adjust = true, double
-                                mapping_filter = 0., bool gzip = false) {
+struct Flg {
+    vector<int> p1s, p2s;
+    vector<double> vs;
+};
+
+Flg file_line_generator(string file,
+                        vector<int> format =
+                        vector<int>(), string
+                        chrom = "", int header = 0, int resolution = 1,
+                        bool resolution_adjust = true, double
+                        mapping_filter = 0., bool gzip = false) {
     if (gzip) throw "gzip opening not implemented yet";
     ifstream fin;
     fin.open(file);
+    Flg ans;
     if (fin.is_open()) {
         if (header) {
             for (int tmp = 0; tmp < header; tmp++) {
@@ -33,6 +42,7 @@ chrom = "", int header = 0, int resolution = 1, bool resolution_adjust = true, d
             }
         }
         string line;
+
         while (getline(fin, line)) {
             istringstream iss(line);
             vector<std::string> lst((istream_iterator<string>(iss)),
@@ -51,8 +61,25 @@ chrom = "", int header = 0, int resolution = 1, bool resolution_adjust = true, d
             if (format.size() == 6) {
                 double q1 = stod(lst[format[4] - 1]), q2 = stod(lst[format[4] - 1]);
             }
+            int p1 = stoi(lst[format[4] - 1]), p2 = stoi(lst[format[4] - 1]);
+            if (resolution_adjust) {
+                p1 = p1 / resolution;
+                p2 = p2 / resolution;
+            }
+            double v;
+            if (format.size() == 4 || format.size() == 6) v = 1.0;
+            else if (format.size() == 5) v = stod(lst[format[4] - 1]);
+            else {
+                throw "Wrong custom format!";
+            }
+            ans.p1s.push_back(p1);
+            ans.p2s.push_back(p2);
+            ans.vs.push_back(v);
         }
+        fin.close();
+
     }
+    return ans;
 
 }
 
@@ -143,11 +170,40 @@ pair<xt::xarray<double>, vector<xt::xarray<double>>> load_HiC(string file, map<s
                                                               operations) {
     int size = genome_length[chromosome];
     transform(format.begin(), format.end(), format.begin(), ::tolower);
+    Flg gen;
     if (format == "shortest_score") {
-
+        gen = file_line_generator(file,vector<int>{1,2,3,4},chromosome,0,resolution,
+        resolution_adjust, 0,gzip);
     } else {
         throw "Not implemented yet";
     }
+    xt::xarray<double> mat = xt::zeros<double>({size,size});
+    int count = 0,gen_size = gen.vs.size();
+    int p1=gen.p1s[0],p2=gen.p2s[0];double val = gen.vs[0];
+    mat(p1,p2)+=val;
+    if(p1!=p2) mat(p2,p2)+=val;
+    for(count;count<gen_size;count++){
+         p1 = gen.p1s[count]-gen.p1s[count-1];
+        p2 = gen.p2s[count] - gen.p2s[count-1];
+        val = gen.vs[count];
+        if(count%100000==0) cout<<"Line: "<<count<<endl;
+        mat(p1,p2)+=val;
+        if(p1!=p2) mat(p2,p2)+=val;
+    }
+
+    if(!operations.empty())mat=matrix_operation(mat,operations);
+    vector<xt::xarray<double>> strata = vector<xt::xarray<double>>();
+    if(keep_n_strata){
+        int matSize = mat.size();
+        for(int i=0;i<keep_n_strata;i++){
+            strata.push_back(xt::diag(xt::view(mat,xt::range(i,xt::placeholders::_),
+                                               xt::range(xt::placeholders::_,
+                                                       matSize-i))));
+        }
+    }
+if(sparse) throw "Not implemented yet";
+return make_pair(mat,strata);
+
 }
 
 

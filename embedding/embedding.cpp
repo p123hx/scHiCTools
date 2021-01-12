@@ -26,6 +26,6 @@ xt::xarray<double> MDS(xt::xarray<double> mat, int n = 2) {
 
     tie(w,v) = xt::linalg::eig(k);
     auto max_ = xt::view(xt::argsort(w),xt::range(xt::placeholders::_,-n-1,-1));
-    return xt::real(xt::col(v,max_))
+    return xt::real(xt::col(v,max_));
 }
 

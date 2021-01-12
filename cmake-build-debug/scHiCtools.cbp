@@ -108,6 +108,12 @@
 		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/load_hic_file.h">
 			<Option target="scHiCtools"/>
 		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/processing_utils.cpp">
+			<Option target="scHiCtools"/>
+		</Unit>
+		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/processing_utils.h">
+			<Option target="scHiCtools"/>
+		</Unit>
 		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/straw.cpp">
 			<Option target="scHiCtools"/>
 		</Unit>

@@ -40,7 +40,9 @@ public:
 //        }
 
         cout<<"Loading HiC data..."
-        if(parallelize){}
+        if(parallelize){
+            throw "Not implemented yet";
+        }
         else{
             int idx =0;
             for(string file : this->files){
