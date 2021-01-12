@@ -11,6 +11,7 @@
 #include <iostream>
 #include <list>
 #include "processing_utils.h"
+
 using namespace std;
 
 static string my_path = "";
@@ -84,8 +85,7 @@ Flg file_line_generator(string file,
 }
 
 pair<set<string>, map<string, int>>
-get_chromosome_lengths(const string &ref_str, const string &chromosomes,
-                       set<string> chrom_set, int res = 1) {
+get_chromosome_lengths(const string &ref_str, const string &chromosomes, int res = 1) {
 //path is in the same folder
 
     map<string, int> length;
@@ -115,11 +115,11 @@ get_chromosome_lengths(const string &ref_str, const string &chromosomes,
     }
     map<string, int> length2;
 
-    if (!chrom_set.empty()) {
-        for (string elm : chrom_set) {
+    if (!chroms.empty()) {
+        for (string elm : chroms) {
             length2[elm] = length[elm];
         }
-        return pair<set<string>, map<string, int >>(chrom_set, length2);
+        return pair<set<string>, map<string, int >>(chroms, length2);
     }
     return pair<set<string>, map<string, int >>(chroms, length2);
 //should we set up threshold for bad reference genome type?
@@ -148,16 +148,16 @@ get_chromosome_lengths(map<string, int> ref_map, string chromosomes,
         for (string elm : chrom_set) {
             length2[elm] = length[elm];
         }
-        return pair<set<string>, map<string, int >>(chrom_set, length2);
+        return make_pair(chrom_set, length2);
     }
-    return pair<set<string>, map<string, int >>(chroms, length2);
+    return make_pair(chroms, length2);
 }
 
 pair<xt::xarray<double>, vector<xt::xarray<double>>> load_HiC(string file, map<string,
         int> genome_length,
                                                               string
                                                               format,
-                                                              vector<int> custom_format,
+                                                              int custom_format,
                                                               int header,
                                                               string chromosome,
                                                               int resolution,
@@ -172,37 +172,39 @@ pair<xt::xarray<double>, vector<xt::xarray<double>>> load_HiC(string file, map<s
     transform(format.begin(), format.end(), format.begin(), ::tolower);
     Flg gen;
     if (format == "shortest_score") {
-        gen = file_line_generator(file,vector<int>{1,2,3,4},chromosome,0,resolution,
-        resolution_adjust, 0,gzip);
+        gen = file_line_generator(file, vector<int>{1, 2, 3, 4}, chromosome, 0,
+                                  resolution,
+                                  resolution_adjust, 0, gzip);
     } else {
         throw "Not implemented yet";
     }
-    xt::xarray<double> mat = xt::zeros<double>({size,size});
-    int count = 0,gen_size = gen.vs.size();
-    int p1=gen.p1s[0],p2=gen.p2s[0];double val = gen.vs[0];
-    mat(p1,p2)+=val;
-    if(p1!=p2) mat(p2,p2)+=val;
-    for(count;count<gen_size;count++){
-         p1 = gen.p1s[count]-gen.p1s[count-1];
-        p2 = gen.p2s[count] - gen.p2s[count-1];
+    xt::xarray<double> mat = xt::zeros<double>({size, size});
+    int count = 0, gen_size = gen.vs.size();
+    int p1 = gen.p1s[0], p2 = gen.p2s[0];
+    double val = gen.vs[0];
+    mat(p1, p2) += val;
+    if (p1 != p2) mat(p2, p2) += val;
+    for (count; count < gen_size; count++) {
+        p1 = gen.p1s[count] - gen.p1s[count - 1];
+        p2 = gen.p2s[count] - gen.p2s[count - 1];
         val = gen.vs[count];
-        if(count%100000==0) cout<<"Line: "<<count<<endl;
-        mat(p1,p2)+=val;
-        if(p1!=p2) mat(p2,p2)+=val;
+        if (count % 100000 == 0) cout << "Line: " << count << endl;
+        mat(p1, p2) += val;
+        if (p1 != p2) mat(p2, p2) += val;
     }
 
-    if(!operations.empty())mat=matrix_operation(mat,operations);
+    if (!operations.empty())mat = matrix_operation(mat, operations);
     vector<xt::xarray<double>> strata = vector<xt::xarray<double>>();
-    if(keep_n_strata){
+    if (keep_n_strata) {
         int matSize = mat.size();
-        for(int i=0;i<keep_n_strata;i++){
-            strata.push_back(xt::diag(xt::view(mat,xt::range(i,xt::placeholders::_),
+        for (int i = 0; i < keep_n_strata; i++) {
+            strata.push_back(xt::diag(xt::view(mat, xt::range(i, xt::placeholders::_),
                                                xt::range(xt::placeholders::_,
-                                                       matSize-i))));
+                                                         matSize - i))));
         }
     }
-if(sparse) throw "Not implemented yet";
-return make_pair(mat,strata);
+    if (sparse) throw "Not implemented yet";
+    return make_pair(mat, strata);
 
 }
 

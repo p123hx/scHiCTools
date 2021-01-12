@@ -27,6 +27,9 @@ BLAS_acml_LIBRARY:FILEPATH=BLAS_acml_LIBRARY-NOTFOUND
 BLAS_acml_mp_LIBRARY:FILEPATH=BLAS_acml_mp_LIBRARY-NOTFOUND
 
 //Path to a library.
+BLAS_blas_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/lib/libblas.tbd
+
+//Path to a library.
 BLAS_blis_LIBRARY:FILEPATH=BLAS_blis_LIBRARY-NOTFOUND
 
 //Path to a library.
@@ -63,6 +66,9 @@ BLAS_mkl_intel_LIBRARY:FILEPATH=BLAS_mkl_intel_LIBRARY-NOTFOUND
 BLAS_mkl_intel_lp64_LIBRARY:FILEPATH=BLAS_mkl_intel_lp64_LIBRARY-NOTFOUND
 
 //Path to a library.
+BLAS_mkl_rt_LIBRARY:FILEPATH=BLAS_mkl_rt_LIBRARY-NOTFOUND
+
+//Path to a library.
 BLAS_openblas_LIBRARY:FILEPATH=BLAS_openblas_LIBRARY-NOTFOUND
 
 //Path to a library.
@@ -76,6 +82,9 @@ BLAS_sunperf_LIBRARY:FILEPATH=BLAS_sunperf_LIBRARY-NOTFOUND
 
 //The directory containing a CMake configuration file for B.
 B_DIR:PATH=B_DIR-NOTFOUND
+
+//Path to a program.
+CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ar
@@ -133,6 +142,9 @@ CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the C compiler during RELWITHDEBINFO builds.
 CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
+
+//Path to a program.
+CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
 
 //Executable file format
 CMAKE_EXECUTABLE_FORMAT:STRING=MACHO
@@ -218,6 +230,9 @@ CMAKE_PROJECT_NAME:STATIC=scHiCtools
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ranlib
+
+//Path to a program.
+CMAKE_READELF:FILEPATH=CMAKE_READELF-NOTFOUND
 
 //Flags used by the linker during the creation of shared libraries
 // during all build types.
@@ -341,6 +356,8 @@ BLAS_WORKS:INTERNAL=
 BLAS_acml_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: BLAS_acml_mp_LIBRARY
 BLAS_acml_mp_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BLAS_blas_LIBRARY
+BLAS_blas_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: BLAS_blis_LIBRARY
 BLAS_blis_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: BLAS_complib.sgimath_LIBRARY
@@ -365,6 +382,8 @@ BLAS_mkl_ia32_LIBRARY-ADVANCED:INTERNAL=1
 BLAS_mkl_intel_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: BLAS_mkl_intel_lp64_LIBRARY
 BLAS_mkl_intel_lp64_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BLAS_mkl_rt_LIBRARY
+BLAS_mkl_rt_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: BLAS_openblas_LIBRARY
 BLAS_openblas_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: BLAS_scsl_LIBRARY
@@ -373,6 +392,8 @@ BLAS_scsl_LIBRARY-ADVANCED:INTERNAL=1
 BLAS_sgemm_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: BLAS_sunperf_LIBRARY
 BLAS_sunperf_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_ADDR2LINE
+CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
 //This is the directory where this CMakeCache.txt was created
@@ -380,9 +401,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/Users/bj/CLionProjects/scHiCtools/cmake-build-debu
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=15
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=17
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=3
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=5
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -415,6 +436,8 @@ CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_DLLTOOL
+CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
 CMAKE_EXE_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_DEBUG
@@ -480,8 +503,10 @@ CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_RANLIB
 CMAKE_RANLIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_READELF
+CMAKE_READELF-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15
+CMAKE_ROOT:INTERNAL=/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG
