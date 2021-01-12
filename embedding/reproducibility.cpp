@@ -14,7 +14,15 @@ double pearsoncoeff(xt::xarray<double> x, xt::xarray<double> y, double size) {
     return xt::sum((x - xt::mean(x)) * (y - xt::mean(y)))() /
            (size * xt::stddev(x)() * xt::stddev(y)());
 }
-
+//along axis = 1
+xt::xarray<double> concatenate_axis1(vector<xt::xarray<double>> all_strata){
+if(all_strata.empty()){throw "all_strata is an empty vector. Contatenation fail";}
+xt::xarray<double> ans = all_strata[0];
+for(int i=1;i<all_strata.size();i++){
+    ans = xt::concatenate(xt::xtuple(ans,all_strata[i]),1);
+}
+return ans;
+}
 xt::xarray<double> euc_pdist_square(xt::xarray<double> x) {
     int rol, col = x.dimension();
     vector<double> tmp(rol * (rol - 1) / 2);
@@ -46,7 +54,7 @@ xt::xarray<double> zscore_prop(xt::xarray<double> a, int axis) {
 }
 
 xt::xarray<double>
-pairwise_distance(xt::xarray<xt::xarray<double>> all_strata, string similarity_method,
+pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_method,
                   bool print_time = false, double sigma = .5,
                   unsigned window_size = 10) {
     transform(similarity_method.begin(), similarity_method.end(),
@@ -57,19 +65,19 @@ pairwise_distance(xt::xarray<xt::xarray<double>> all_strata, string similarity_m
 
     int n_cells, n_bins = all_strata[0].dimension();
     int all_size = all_strata.size();
-    xt::xarray<xt::xarray<double>> tmp = xt::zeros<double>({1, all_size});
+   vector<xt::xarray<double>> tmp;
     xt::xarray<double> distance_mat;
 
     if (similarity_method == "inner_product" or similarity_method == "innerproduct") {
-        int index = 0;
+
         for (xt::xarray<double> stratum : all_strata) {
             xt::xarray<double> z = zscore_prop(stratum, 1);
             //??
             z[xt::isnan(z)] = 0;
-            tmp(index) = z;
-            index++;
+            tmp.push_back(z);
+
         }
-        zscores = xt::concatenate(xt::xtuple(tmp), 1);
+        zscores = concatenate_axis1(tmp);
         t1 = high_resolution_clock::now();
         xt::xarray<double> inner = xt::linalg::dot(zscores, xt::transpose(zscores));
         inner[inner > 1] = 1;
@@ -88,7 +96,7 @@ pairwise_distance(xt::xarray<xt::xarray<double>> all_strata, string similarity_m
             all_strata[i] -= xt::col(mean, NULL);
             i++;
         }
-        xt::xarray<double> scores = xt::concatenate(xt::xtuple(all_strata), 1);
+        xt::xarray<double> scores = concatenate_axis1(all_strata);
         t1 = high_resolution_clock::now();
         xt::xarray<double> inner = xt::linalg::dot(scores, xt::transpose(scores));
         inner[inner > 1] = 1;

@@ -11,7 +11,8 @@
 
 using namespace std;
 
-scHiCs::scHiCs(vector<string> list_of_files, string reference_genome, int resolution,
+scHiCs::scHiCs(vector<string> list_of_files, string reference_genome, int resolution,int
+kernel_shape,int max_distance,
                bool adjust_resolution, bool sparse, string chromosomes, string format,
                int keep_n_strata, bool store_full_map, vector<string> operations,
                int header, int customized_format, double map_filter, bool gzip,

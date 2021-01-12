@@ -15,7 +15,8 @@ using namespace std;
 
 class scHiCs {
 public:
-    scHiCs(vector<string> list_of_files, string reference_genome, int resolution, bool
+    scHiCs(vector<string> list_of_files, string reference_genome, int resolution, int
+    kernel_shape,int max_distance, bool
     adjust_resolution = true, bool sparse = false, string chromosomes = "all", string
            format = "customized", int keep_n_strata = 10, bool store_full_map = false,
            vector<string> operations = {}, int header = 0, int customized_format =

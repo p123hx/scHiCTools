@@ -7627,20 +7627,8 @@ CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o: /usr/local/include/tbb/tb
 CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o: /usr/local/include/tbb/tbb_thread.h
 CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o: /usr/local/include/tbb/tick_count.h
 
-CMakeFiles/scHiCtools.dir/load/straw.cpp.o: ../load/straw.cpp
-CMakeFiles/scHiCtools.dir/load/straw.cpp.o: ../load/straw.h
-CMakeFiles/scHiCtools.dir/load/straw.cpp.o: /Users/bj/opt/anaconda3/include/curl/curl.h
-CMakeFiles/scHiCtools.dir/load/straw.cpp.o: /Users/bj/opt/anaconda3/include/curl/curlver.h
-CMakeFiles/scHiCtools.dir/load/straw.cpp.o: /Users/bj/opt/anaconda3/include/curl/easy.h
-CMakeFiles/scHiCtools.dir/load/straw.cpp.o: /Users/bj/opt/anaconda3/include/curl/multi.h
-CMakeFiles/scHiCtools.dir/load/straw.cpp.o: /Users/bj/opt/anaconda3/include/curl/system.h
-CMakeFiles/scHiCtools.dir/load/straw.cpp.o: /Users/bj/opt/anaconda3/include/curl/typecheck-gcc.h
-CMakeFiles/scHiCtools.dir/load/straw.cpp.o: /Users/bj/opt/anaconda3/include/curl/urlapi.h
-CMakeFiles/scHiCtools.dir/load/straw.cpp.o: /Users/bj/opt/anaconda3/include/zconf.h
-CMakeFiles/scHiCtools.dir/load/straw.cpp.o: /Users/bj/opt/anaconda3/include/zlib.h
-
-CMakeFiles/scHiCtools.dir/main.cpp.o: ../main.cpp
-
+CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o: ../load/ContactMaps.h
+CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o: ../load/load_hic_file.h
 CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o: ../test/test_reproducibility.cpp
 CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o: /Users/bj/opt/anaconda3/include/xflens/cxxblas/auxiliary/auxiliary.h
 CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o: /Users/bj/opt/anaconda3/include/xflens/cxxblas/auxiliary/auxiliary.tcc

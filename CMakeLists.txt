@@ -1,17 +1,15 @@
 cmake_minimum_required(VERSION 3.15)
 project(scHiCtools)
 add_definitions(-DHAVE_CBLAS=1)
-find_package(BLAS REQUIRED)
-find_package(LAPACK REQUIRED)
 find_package(xtl REQUIRED)
 find_package(xtensor REQUIRED)
 find_package(xtensor-blas REQUIRED)
-
-add_executable(scHiCtools main.cpp embedding/reproducibility.cpp embedding/reproducibility.h load/straw.cpp load/straw.h load/ContactMaps.cpp load/ContactMaps.h load/load_hic_file.cpp load/load_hic_file.h embedding/embedding.cpp embedding/embedding.h test/test_reproducibility.cpp load/processing_utils.h load/processing_utils.cpp)
+#[[load/straw.cpp load/straw.h]]
+add_executable(scHiCtools embedding/reproducibility.cpp embedding/reproducibility.h  load/ContactMaps.cpp load/ContactMaps.h load/load_hic_file.cpp load/load_hic_file.h embedding/embedding.cpp embedding/embedding.h test/test_reproducibility.cpp load/processing_utils.h load/processing_utils.cpp)
 if(MSVC)
     set(CMAKE_EXE_LINKER_FLAGS /MANIFEST:NO)
 endif()
-target_link_libraries(scHiCtools xtensor xtensor::optimize -march=native xtensor-blas octave)
+target_link_libraries(scHiCtools xtensor xtensor::optimize -march=native xtensor-blas)
 
 
 

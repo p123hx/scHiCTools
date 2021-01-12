@@ -278,60 +278,6 @@ load/processing_utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.s
 .PHONY : load/processing_utils.cpp.s
 
-load/straw.o: load/straw.cpp.o
-
-.PHONY : load/straw.o
-
-# target to build an object file
-load/straw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/straw.cpp.o
-.PHONY : load/straw.cpp.o
-
-load/straw.i: load/straw.cpp.i
-
-.PHONY : load/straw.i
-
-# target to preprocess a source file
-load/straw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/straw.cpp.i
-.PHONY : load/straw.cpp.i
-
-load/straw.s: load/straw.cpp.s
-
-.PHONY : load/straw.s
-
-# target to generate assembly for a file
-load/straw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/straw.cpp.s
-.PHONY : load/straw.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/main.cpp.s
-.PHONY : main.cpp.s
-
 test/test_reproducibility.o: test/test_reproducibility.cpp.o
 
 .PHONY : test/test_reproducibility.o
@@ -383,12 +329,6 @@ help:
 	@echo "... load/processing_utils.o"
 	@echo "... load/processing_utils.i"
 	@echo "... load/processing_utils.s"
-	@echo "... load/straw.o"
-	@echo "... load/straw.i"
-	@echo "... load/straw.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 	@echo "... test/test_reproducibility.o"
 	@echo "... test/test_reproducibility.i"
 	@echo "... test/test_reproducibility.s"
