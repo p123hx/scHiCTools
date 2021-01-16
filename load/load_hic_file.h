@@ -44,7 +44,7 @@ pair<xt::xarray<double>, vector<xt::xarray<double>>> load_HiC(string file, map<s
                                                               double map_filter = 0.,
                                                               bool sparse = false,
                                                               bool gzip = false,
-                                                              bool keep_n_strata = false,
+                                                              int keep_n_strata = 0,
                                                               vector<string> operations = vector<string>());
 
 #endif //SCHICTOOLS_LOAD_HIC_FILE_H

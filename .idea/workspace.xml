@@ -12,35 +12,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="364857e1-62bc-4fd6-a1e8-6a826123fe46" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/load/reference_genome/hg19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/load/reference_genome/hg38" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/load/reference_genome/mm10" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/load/reference_genome/mm9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/data/all_strata.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/data/cell_01" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/data/cell_02" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/data/cell_03" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/data/test.hic" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/data/test.mcool" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMake/FindOctave.cmake" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/straw.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/scHiCtools" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/scHiCtools" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/scHiCtools.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/scHiCtools.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/embedding/reproducibility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/embedding/reproducibility.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/embedding/reproducibility.h" beforeDir="false" afterPath="$PROJECT_DIR$/embedding/reproducibility.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/load/ContactMaps.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/ContactMaps.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/load/ContactMaps.h" beforeDir="false" afterPath="$PROJECT_DIR$/load/ContactMaps.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load/straw.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/straw.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/load/load_hic_file.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/load_hic_file.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load/load_hic_file.h" beforeDir="false" afterPath="$PROJECT_DIR$/load/load_hic_file.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load/processing_utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/processing_utils.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_reproducibility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_reproducibility.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +46,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ClangdSettings">
+    <option name="clangTidyViaClangd" value="false" />
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
@@ -64,11 +62,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="debugger.dataViews" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -78,19 +78,9 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="scHiCtools" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="scHiCtools" TARGET_NAME="scHiCtools" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="scHiCtools" RUN_TARGET_NAME="scHiCtools">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -153,57 +143,50 @@
       <workItem from="1610414210600" duration="1153000" />
       <workItem from="1610415479619" duration="114000" />
       <workItem from="1610415629797" duration="6086000" />
-      <workItem from="1610425019850" duration="2598000" />
+      <workItem from="1610425019850" duration="7094000" />
+      <workItem from="1610499896125" duration="1232000" />
+      <workItem from="1610665394012" duration="91000" />
+      <workItem from="1610680018878" duration="3857000" />
+      <workItem from="1610718842221" duration="7046000" />
+      <workItem from="1610809324731" duration="6299000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="0" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608151190010">
-      <screen x="0" y="25" width="1920" height="981" />
-    </state>
-    <state x="0" y="324" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1608151190010" />
-    <state x="676" y="347" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608095921770">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="676" y="347" key="#com.intellij.fileTypes.FileTypeChooser/1920.522.1792.1120/0.0.1920.1080@0.0.1920.1080" timestamp="1608095921770" />
-    <state x="264" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1609595787618">
-      <screen x="0" y="25" width="1920" height="981" />
-    </state>
-    <state x="264" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1609595787618" />
-    <state x="1167" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608043951271">
-      <screen x="0" y="25" width="1920" height="981" />
-    </state>
-    <state x="1167" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1608043951271" />
-    <state x="100" y="100" width="1720" height="880" key="DiffContextDialog" timestamp="1609999208247">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="100" y="100" width="1720" height="880" key="DiffContextDialog/1920.522.1792.1120/0.0.1920.1080@0.0.1920.1080" timestamp="1609999208247" />
-    <state x="110" y="149" key="SettingsEditor" timestamp="1609998682082">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="110" y="149" key="SettingsEditor/1920.522.1792.1120/0.0.1920.1080@0.0.1920.1080" timestamp="1609998682082" />
-    <state x="110" y="160" key="SettingsEditor/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1609997944952" />
-    <state x="250" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1610152660575">
-      <screen x="0" y="25" width="1920" height="981" />
-    </state>
-    <state x="250" y="351" key="com.intellij.ide.util.TipDialog/1920.522.1792.1120/0.0.1920.1080@0.0.1920.1080" timestamp="1610036504085" />
-    <state x="250" y="351" key="com.intellij.ide.util.TipDialog/1920.547.1792.1095/0.0.1920.1006@0.0.1920.1006" timestamp="1610028776890" />
-    <state x="250" y="351" key="com.intellij.ide.util.TipDialog/1920.547.1792.1095/0.0.1920.1080@0.0.1920.1080" timestamp="1610071179635" />
-    <state x="250" y="344" key="com.intellij.ide.util.TipDialog/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1610152660575" />
-    <state x="1192" y="25" width="728" height="961" key="dock-window-1" timestamp="1610088864213">
-      <screen x="0" y="25" width="1920" height="981" />
-    </state>
-    <state x="1192" y="25" width="728" height="961" key="dock-window-1/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1610088864213" />
-    <state x="623" y="175" width="674" height="729" key="find.popup" timestamp="1610071810610">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="623" y="175" width="674" height="729" key="find.popup/1920.522.1792.1120/0.0.1920.1080@0.0.1920.1080" timestamp="1610071810610" />
-    <state x="268" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1610072595251">
-      <screen x="0" y="25" width="1920" height="981" />
-    </state>
-    <state x="268" y="241" width="670" height="676" key="search.everywhere.popup/1920.547.1792.1095/0.25.1920.981@0.25.1920.981" timestamp="1610072595251" />
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/test/test_reproducibility.cpp</url>
+          <line>21</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/load/ContactMaps.cpp</url>
+          <line>81</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/load/load_hic_file.cpp</url>
+          <line>209</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/load/processing_utils.cpp</url>
+          <line>11</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/load/processing_utils.cpp</url>
+          <line>21</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

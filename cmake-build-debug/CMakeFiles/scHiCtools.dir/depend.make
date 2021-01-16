@@ -7627,6 +7627,7 @@ CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o: /usr/local/include/tbb/tb
 CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o: /usr/local/include/tbb/tbb_thread.h
 CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o: /usr/local/include/tbb/tick_count.h
 
+CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o: ../embedding/reproducibility.h
 CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o: ../load/ContactMaps.h
 CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o: ../load/load_hic_file.h
 CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o: ../test/test_reproducibility.cpp

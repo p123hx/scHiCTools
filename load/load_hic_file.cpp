@@ -11,13 +11,14 @@
 #include <iostream>
 #include <list>
 #include "processing_utils.h"
+#include <filesystem>
 
 using namespace std;
 
 static string my_path = "";
 
 int _res_change(int length, int res) {
-    return ceil(length / res);
+    return ceil((double) length / (double) res);
 }
 
 struct Flg {
@@ -33,9 +34,11 @@ Flg file_line_generator(string file,
                         mapping_filter = 0., bool gzip = false) {
     if (gzip) throw "gzip opening not implemented yet";
     ifstream fin;
+    cout << file << endl;
     fin.open(file);
     Flg ans;
     if (fin.is_open()) {
+        cout << "opening " << file << endl;
         if (header) {
             for (int tmp = 0; tmp < header; tmp++) {
                 string dum;
@@ -52,24 +55,27 @@ Flg file_line_generator(string file,
                 throw "Wrong custom format!";
             }
             if (format[0] != 0 && format[2] != 0) {
-                string c1, c2 = lst[format[0] - 1],
-                        lst[format[2] - 1];
+                string c1 = lst[format[0] - 1],
+                        c2 = lst[format[2] - 1];
                 if ((c1 != chrom && "chr" + c1 != chrom) || (c2 != chrom && "chr" + c2 !=
                                                                             chrom))
                     continue;
 
             }
             if (format.size() == 6) {
-                double q1 = stod(lst[format[4] - 1]), q2 = stod(lst[format[4] - 1]);
+                double q1 = stod(lst[format[4] - 1]), q2 = stod(lst[format[5] - 1]);
+                if (q1 < mapping_filter or q2 < mapping_filter) continue;
             }
-            int p1 = stoi(lst[format[4] - 1]), p2 = stoi(lst[format[4] - 1]);
+
+            int p1 = stoi(lst[format[1] - 1]), p2 = stoi(lst[format[3] - 1]);
             if (resolution_adjust) {
                 p1 = p1 / resolution;
                 p2 = p2 / resolution;
             }
             double v;
             if (format.size() == 4 || format.size() == 6) v = 1.0;
-            else if (format.size() == 5) v = stod(lst[format[4] - 1]);
+            else if (format.size() == 5) {
+                v = stod(lst[format[4] - 1]); }
             else {
                 throw "Wrong custom format!";
             }
@@ -79,6 +85,8 @@ Flg file_line_generator(string file,
         }
         fin.close();
 
+    } else {
+        throw "File opening fail";
     }
     return ans;
 
@@ -90,12 +98,17 @@ get_chromosome_lengths(const string &ref_str, const string &chromosomes, int res
 
     map<string, int> length;
     ifstream fin;
-    string filename = "reference_genome/" + ref_str;
+
+    string filename = "../load/reference_genome/" + ref_str;
     try {
         fin.open(filename);
+        if (!(fin.is_open() && fin.good())) {
+            cout << "not open" << endl;
+            throw "not open";
+        }
     } catch (const ifstream::failure &e) {
         try {
-            fin.open("reference_genome\\" + ref_str);
+            fin.open("../load/reference_genome\\" + ref_str);
         } catch (const ifstream::failure &e) {
             cout << "Exception opening/reading file";
         }
@@ -107,21 +120,20 @@ get_chromosome_lengths(const string &ref_str, const string &chromosomes, int res
         length.insert(pair<string, int>(name, res_change));
         chroms.insert(name);
     }
-    if (chromosomes == "except X") length.erase("chrX");
-    else if (chromosomes == "except Y") length.erase("chrY");
-    else if (chromosomes == "except XY") {
+    if (chromosomes == "except X") {
+        length.erase("chrX");
+        chroms.erase("chrX");
+    } else if (chromosomes == "except Y") {
+        length.erase("chrY");
+        chroms.erase("chrY");
+    } else if (chromosomes == "except XY") {
         length.erase("chrX");
         length.erase("chrY");
+        chroms.erase("chrX");
+        chroms.erase("chrY");
     }
-    map<string, int> length2;
 
-    if (!chroms.empty()) {
-        for (string elm : chroms) {
-            length2[elm] = length[elm];
-        }
-        return pair<set<string>, map<string, int >>(chroms, length2);
-    }
-    return pair<set<string>, map<string, int >>(chroms, length2);
+    return pair<set<string>, map<string, int >>(chroms, length);
 //should we set up threshold for bad reference genome type?
 }
 
@@ -165,30 +177,31 @@ pair<xt::xarray<double>, vector<xt::xarray<double>>> load_HiC(string file, map<s
                                                               double map_filter,
                                                               bool sparse,
                                                               bool gzip,
-                                                              bool keep_n_strata,
+                                                              int keep_n_strata,
                                                               vector<string>
                                                               operations) {
     int size = genome_length[chromosome];
     transform(format.begin(), format.end(), format.begin(), ::tolower);
     Flg gen;
     if (format == "shortest_score") {
-        gen = file_line_generator(file, vector<int>{1, 2, 3, 4}, chromosome, 0,
+        gen = file_line_generator(file, vector<int>{1, 2, 3, 4,5}, chromosome, header,
                                   resolution,
                                   resolution_adjust, 0, gzip);
     } else {
         throw "Not implemented yet";
     }
     xt::xarray<double> mat = xt::zeros<double>({size, size});
-    int count = 0, gen_size = gen.vs.size();
-    int p1 = gen.p1s[0], p2 = gen.p2s[0];
-    double val = gen.vs[0];
-    mat(p1, p2) += val;
-    if (p1 != p2) mat(p2, p2) += val;
-    for (count; count < gen_size; count++) {
-        p1 = gen.p1s[count] - gen.p1s[count - 1];
-        p2 = gen.p2s[count] - gen.p2s[count - 1];
-        val = gen.vs[count];
-        if (count % 100000 == 0) cout << "Line: " << count << endl;
+    int gen_size = gen.vs.size();
+    if (gen.vs.empty()) throw "empty vs";
+
+    int p1_m = *min_element(gen.p1s.begin(), gen.p1s.end()), p2_m = *min_element(gen.p2s
+                                                                                         .begin(),
+                                                                                 gen.p2s.end());
+
+    for (int count = 0; count < gen_size; count++) {
+        int p1 = gen.p1s[count] - p1_m;
+        int p2 = gen.p2s[count] - p2_m;
+        double val = gen.vs[count];
         mat(p1, p2) += val;
         if (p1 != p2) mat(p2, p2) += val;
     }

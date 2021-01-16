@@ -7,12 +7,25 @@
 #include "xtensor/xview.hpp"
 #include "xtensor-blas/xlinalg.hpp"
 #include "../load/ContactMaps.h"
+#include "../embedding/reproducibility.h"
+
 using namespace std;
-int main(){
-vector<string> fileLst {"data/cell_03","data/cell_01","data/cell_02"};
-vector<string> operation {"convolution"};
-scHiCs y = scHiCs(fileLst,"mm9",100000,3,4000000,true,false, "all","shortest_score",
-                  10,false,
-                  operation,0,0,0,false,false,0);
+
+int main() {
+    vector<string> fileLst{"../test/data/cell_03", "../test/data/cell_01",
+                           "../test/data/cell_02"};
+    vector<string> operation{"convolution"};
+    scHiCs y = scHiCs(fileLst, "mm9", 100000, 3, 4000000, false, "except Y",
+                      "shortest_score",
+                      10, true,
+                      operation);
+    vector<xt::xarray<double>> all_strata = y.get_strata()["chr8"];
+    cout << "all_strata: " << all_strata.size() << endl;
+    for (xt::xarray<double> tmp : all_strata) {
+        cout << tmp << endl;
+    }
+    //   xt::xarray<double> pair_dis = pairwise_distance(all_strata,"hicrep");
+
+    //   cout<<"pairwise dis: "<<pair_dis<<endl;
 
 }

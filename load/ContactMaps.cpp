@@ -13,10 +13,10 @@ using namespace std;
 
 scHiCs::scHiCs(vector<string> list_of_files, string reference_genome, int resolution,int
 kernel_shape,int max_distance,
-               bool adjust_resolution, bool sparse, string chromosomes, string format,
+               bool adjust_resolution, string chromosomes, string format,
                int keep_n_strata, bool store_full_map, vector<string> operations,
                int header, int customized_format, double map_filter, bool gzip,
-               bool parallelize, int n_processes) {
+               bool parallelize, int n_processes, bool sparse) {
     {
         this->resolution = resolution;
         tie(this->chromosomes,
@@ -35,14 +35,14 @@ kernel_shape,int max_distance,
             for (string ch : this->chromosomes) {
 
                 for (int i = 0; i < keep_n_strata; i++) {
-                    this->strata[ch](i) = xt::zeros<double>({this->num_of_cells,
-                                                             this->chromosome_lengths[ch] -
-                                                             i});
+                    this->strata[ch].push_back(xt::zeros<double>({this->num_of_cells,
+                                                                  this->chromosome_lengths[ch] -
+                                                                  i})) ;
                 }
 
             }
         }
-
+//full_maps is not implemented
 
         cout << "Loading HiC data...";
         if (parallelize) {
@@ -76,11 +76,14 @@ kernel_shape,int max_distance,
                         this->mitotic(idx)+=xt::sum(xt::view(mat,i,xt::range(i+int
                         (2000000 /this->resolution),i+int(12000000/this->resolution))))();
                     }
-                    if(store_full_map) throw"Not implemented yet";
+                    if(store_full_map) {
+                        cout<<"full_map not implemented!\n";
+                    }
                     if(keep_n_strata){
                         int strata_idx = 0;
-                        for(xt::xarray<double> stratum:strata_local){
-                            xt::row(this->strata[ch](strata_idx),idx) = stratum;
+                        for(xt::xarray<double> stratum : strata_local){
+                            xt::row(this->strata[ch][strata_idx],idx) = stratum;
+                            strata_idx++;
                         }
                     }
                 }
@@ -88,4 +91,8 @@ kernel_shape,int max_distance,
 
         }
     }
+}
+
+map<string, vector<xt::xarray<double>>> scHiCs::get_strata() {
+    return this->strata;
 }

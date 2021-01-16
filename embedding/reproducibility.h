@@ -20,7 +20,7 @@ xt::xarray<double> euc_pdist_square(xt::xarray<double> x);
 xt::xarray<double> zscore_prop(xt::xarray<double> a, int axis);
 
 xt::xarray<double>
-pairwise_distance(xt::xarray<xt::xarray<double>> all_strata, string similarity_method,
+pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_method,
                   bool print_time = false, double sigma = .5,
                   unsigned window_size = 10);
 
