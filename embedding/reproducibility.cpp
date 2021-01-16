@@ -24,7 +24,7 @@ for(int i=1;i<all_strata.size();i++){
 return ans;
 }
 xt::xarray<double> euc_pdist_square(xt::xarray<double> x) {
-    int rol, col = x.dimension();
+    int rol=x.shape(0), col = x.shape(1);
     vector<double> tmp(rol * (rol - 1) / 2);
     for (int i = 0; i < rol; i++) {
         for (int j = 0; j < i; j++) {
@@ -63,7 +63,7 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
     high_resolution_clock::time_point t1, t2;
     xt::xarray<double> zscores;
 
-    int n_cells, n_bins = all_strata[0].dimension();
+    int n_cells=all_strata[0].shape(0), n_bins = all_strata[0].shape(1);
     int all_size = all_strata.size();
    vector<xt::xarray<double>> tmp;
     xt::xarray<double> distance_mat;

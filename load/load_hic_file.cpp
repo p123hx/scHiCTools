@@ -203,18 +203,23 @@ pair<xt::xarray<double>, vector<xt::xarray<double>>> load_HiC(string file, map<s
         int p2 = gen.p2s[count] - p2_m;
         double val = gen.vs[count];
         mat(p1, p2) += val;
-        if (p1 != p2) mat(p2, p2) += val;
+        if (p1 != p2) mat(p2, p1) += val;
     }
 
-    if (!operations.empty())mat = matrix_operation(mat, operations);
+    if (operations.empty()){cout<<"Warning: operation empty\n";}
+    xt::xarray<double> mat2 = matrix_operation(mat, operations);
     vector<xt::xarray<double>> strata = vector<xt::xarray<double>>();
     if (keep_n_strata) {
-        int matSize = mat.size();
+        int matSize = mat2.shape(0);
         for (int i = 0; i < keep_n_strata; i++) {
-            strata.push_back(xt::diag(xt::view(mat, xt::range(i, xt::placeholders::_),
+            strata.push_back(xt::diagonal(xt::view(mat2, xt::range(i,
+                                                                   xt::placeholders::_),
                                                xt::range(xt::placeholders::_,
                                                          matSize - i))));
+            cout<<strata[i]<<endl;
         }
+    } else{
+        throw "Not implemented yet";
     }
     if (sparse) throw "Not implemented yet";
     return make_pair(mat, strata);

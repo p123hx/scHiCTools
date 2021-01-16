@@ -12,33 +12,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="364857e1-62bc-4fd6-a1e8-6a826123fe46" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/load/reference_genome/hg19" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load/reference_genome/hg38" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load/reference_genome/mm10" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/load/reference_genome/mm9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/data/all_strata.pkl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/data/cell_01" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/data/cell_02" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/data/cell_03" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/data/test.hic" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/data/test.mcool" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMake/FindOctave.cmake" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/scHiCtools" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/scHiCtools" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/embedding/reproducibility.h" beforeDir="false" afterPath="$PROJECT_DIR$/embedding/reproducibility.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load/ContactMaps.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/ContactMaps.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load/ContactMaps.h" beforeDir="false" afterPath="$PROJECT_DIR$/load/ContactMaps.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/embedding/reproducibility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/embedding/reproducibility.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/load/load_hic_file.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/load_hic_file.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load/load_hic_file.h" beforeDir="false" afterPath="$PROJECT_DIR$/load/load_hic_file.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/load/processing_utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/processing_utils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_reproducibility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_reproducibility.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +34,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1lhHpW2sdro47KDRDRDvjm36n5Y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -149,6 +139,7 @@
       <workItem from="1610680018878" duration="3857000" />
       <workItem from="1610718842221" duration="7046000" />
       <workItem from="1610809324731" duration="6299000" />
+      <workItem from="1610827588808" duration="4503000" />
     </task>
     <servers />
   </component>
@@ -173,20 +164,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/load/load_hic_file.cpp</url>
-          <line>209</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/load/processing_utils.cpp</url>
-          <line>11</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/load/processing_utils.cpp</url>
-          <line>21</line>
-          <option name="timeStamp" value="48" />
+          <line>223</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="mat" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
