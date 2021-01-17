@@ -3,6 +3,7 @@
 // Created by Hongxi on 16/12/2020.
 //
 #include <utility>
+#include <fstream>
 #include "xtensor/xio.hpp"
 #include "xtensor/xview.hpp"
 #include "xtensor-blas/xlinalg.hpp"
@@ -58,7 +59,7 @@ xt::xarray<double> zscore_prop(xt::xarray<double> a, int axis) {
 
 xt::xarray<double>
 pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_method,
-                  bool print_time = false, double sigma = .5,
+                  bool print_time = true, double sigma = .5,
                   unsigned window_size = 10) {
     transform(similarity_method.begin(), similarity_method.end(),
               similarity_method.begin(), ::tolower);
@@ -93,39 +94,39 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
         xt::xarray<double> weighted_std = xt::zeros<double>({n_cells, n_bins});
         int i = 0;
         for (auto stratum : all_strata) {
-            cout << "i=" << i << endl;
+//            cout << "i=" << i << endl;
             xt::xarray<double> mean = xt::mean(stratum, {1});
             xt::xarray<double> std = xt::stddev(stratum, {1});
-            cout << "Mean:\n" << mean << endl << "std:\n" << std << "\nstrata "
-                                                                    "be4\n" << stratum
-                 << "\nstrata after\n";
+//            cout << "Mean:\n" << mean << endl << "std:\n" << std << "\nstrata "
+//                                                                    "be4\n" << stratum
+//                 << "\nstrata after\n";
             xt::col(weighted_std, i) = sqrt(n_bins - i) * std;
             for (int j = 0; j < mean.size(); j++) {
                 xt::row(all_strata[i], j) = xt::row(stratum, j) - mean(j);
             }
 
-            cout << all_strata[i] << endl;
+//            cout << all_strata[i] << endl;
             i++;
         }
         xt::xarray<double> scores = concatenate_axis1(all_strata);
-        cout << "scores:\n " << scores << endl;
-        cout << "weighted_std:\n" << weighted_std << endl;
+//        cout << "scores:\n " << scores << endl;
+//        cout << "weighted_std:\n" << weighted_std << endl;
         t1 = high_resolution_clock::now();
         xt::xarray<double> inner = xt::linalg::dot(scores, xt::transpose(scores)) /
                                    (xt::linalg::dot(weighted_std,
                                                     xt::transpose(weighted_std)) +
                                     DBL_MIN);
-        cout << "dinominator:\n" << xt::linalg::dot(scores, xt::transpose(scores))
-             << "\nnumeritor\n"
-             << (xt::linalg::dot(weighted_std, xt::transpose(weighted_std)) + DBL_MIN
-             ) << "\n inner be4\n" << inner;
+//        cout << "dinominator:\n" << xt::linalg::dot(scores, xt::transpose(scores))
+//             << "\nnumeritor\n"
+//             << (xt::linalg::dot(weighted_std, xt::transpose(weighted_std)) + DBL_MIN
+//             ) << "\n inner be4\n" << inner;
         for (int i = 0; i < inner.size(); i++) {
             if (inner(i) > 1) inner(i) = 1.0;
             if (inner(i) < -1) inner(i) = -1.0;
         }
-        cout << "\ninner: " << inner << endl;
+//        cout << "\ninner: " << inner << endl;
         distance_mat = xt::sqrt(2 - 2 * inner);
-        cout << "distance_mat infunc\n" << distance_mat << endl;
+//        cout << "distance_mat infunc\n" << distance_mat << endl;
         t2 = high_resolution_clock::now();
 
     } else if (similarity_method == "old_hicrep") {
@@ -197,11 +198,17 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
 
     auto duration1 = duration_cast<microseconds>(t1 - t0);
     auto duration2 = duration_cast<microseconds>(t2 - t1);
-    if (print_time) {
-        cout << "Time 1:" << duration1.count() << endl
-             << "Time 2:" << duration2.count() << endl;
-    }
-
+//    if (print_time) {
+//        cout << "Time 1:" << duration1.count() << endl
+//             << "Time 2:" << duration2.count() << endl;
+//    }
+    cout << "Time 1:" << duration1.count() << endl
+         << "Time 2:" << duration2.count() << endl;
+    ofstream fout;
+    fout.open("time_test.txt");
+    fout<<"Time 1: "<< duration1.count() << endl<< "Time 2:" << duration2.count() <<
+    endl;
+    fout.close();
     return distance_mat;
 }
 

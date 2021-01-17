@@ -103,6 +103,7 @@ all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles 0
+
 .PHONY : all
 
 # The main clean target
@@ -345,4 +346,3 @@ help:
 cmake_check_build_system:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
-
