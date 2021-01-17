@@ -20,12 +20,8 @@ int main() {
                       10, true,
                       operation);
     vector<xt::xarray<double>> all_strata = y.get_strata()["chr8"];
-    cout << "all_strata: " << all_strata.size() << endl;
-    for (xt::xarray<double> tmp : all_strata) {
-        cout << tmp << endl;
-    }
-    //   xt::xarray<double> pair_dis = pairwise_distance(all_strata,"hicrep");
+    xt::xarray<double> pair_dis = pairwise_distance(all_strata, "hicrep");
 
-    //   cout<<"pairwise dis: "<<pair_dis<<endl;
+    cout << "pairwise dis: " << pair_dis << endl;
 
 }

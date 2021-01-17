@@ -18,7 +18,6 @@ xt::xarray<double> matrix_operation(xt::xarray<double> mat, vector<string> opera
         }
 
     }
-cout<<tmp<<endl;
     return tmp;
 }
 

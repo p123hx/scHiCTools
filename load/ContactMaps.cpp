@@ -27,7 +27,7 @@ kernel_shape,int max_distance,
         this->sparse = sparse;
         this->keep_n_strata = keep_n_strata;
         this->contacts = xt::zeros<int>({this->num_of_cells});
-        this->short_range = xt::zeros<double>({this->num_of_cells});
+        this->  short_range = xt::zeros<double>({this->num_of_cells});
         this->mitotic = xt::zeros<double>({this->num_of_cells});
         this->files = list_of_files;
 
@@ -44,13 +44,13 @@ kernel_shape,int max_distance,
         }
 //full_maps is not implemented
 
-        cout << "Loading HiC data...";
+        cout << "Loading HiC data...\n";
         if (parallelize) {
             throw "Not implemented yet";
         } else {
             int idx = 0;
             for (string file : this->files) {
-
+                cout<<"loading: "<<file<<endl;
                 for (string ch : this->chromosomes) {
                     size_t index = ch.find("ch");
                     if (index != string::npos && ch.find("chr") == string::npos) {
@@ -76,17 +76,19 @@ kernel_shape,int max_distance,
                         this->mitotic(idx)+=xt::sum(xt::view(mat,i,xt::range(i+int
                         (2000000 /this->resolution),i+int(12000000/this->resolution))))();
                     }
-                    if(store_full_map) {
-                        cout<<"full_map not implemented!\n";
-                    }
-                    if(keep_n_strata){
+//                    if(store_full_map) {
+//                        cout<<"full_map not implemented!\n";
+//                    }
+                   if(keep_n_strata){
                         int strata_idx = 0;
                         for(xt::xarray<double> stratum : strata_local){
                             xt::row(this->strata[ch][strata_idx],idx) = stratum;
                             strata_idx++;
+//                            cout<<stratum<<endl;
                         }
                     }
                 }
+                idx++;
             }
 
         }

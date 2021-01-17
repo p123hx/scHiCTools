@@ -14,19 +14,21 @@ double pearsoncoeff(xt::xarray<double> x, xt::xarray<double> y, double size) {
     return xt::sum((x - xt::mean(x)) * (y - xt::mean(y)))() /
            (size * xt::stddev(x)() * xt::stddev(y)());
 }
+
 //along axis = 1
-xt::xarray<double> concatenate_axis1(vector<xt::xarray<double>> all_strata){
-if(all_strata.empty()){throw "all_strata is an empty vector. Contatenation fail";}
-xt::xarray<double> ans = all_strata[0];
-for(int i=1;i<all_strata.size();i++){
-    ans = xt::concatenate(xt::xtuple(ans,all_strata[i]),1);
+xt::xarray<double> concatenate_axis1(vector<xt::xarray<double>> all_strata) {
+    if (all_strata.empty()) { throw "all_strata is an empty vector. Contatenation fail"; }
+    xt::xarray<double> ans = all_strata[0];
+    for (int i = 1; i < all_strata.size(); i++) {
+        ans = xt::concatenate(xt::xtuple(ans, all_strata[i]), 1);
+    }
+    return ans;
 }
-return ans;
-}
+
 xt::xarray<double> euc_pdist_square(xt::xarray<double> x) {
-    int rol=x.shape(0), col = x.shape(1);
-    vector<double> tmp(rol * (rol - 1) / 2);
-    for (int i = 0; i < rol; i++) {
+    int row = x.shape(0), col = x.shape(1);
+    vector<double> tmp(row * (row - 1) / 2);
+    for (int i = 0; i < row; i++) {
         for (int j = 0; j < i; j++) {
             double dum = 0;
             for (int k = 0; k < col; k++) {
@@ -35,11 +37,11 @@ xt::xarray<double> euc_pdist_square(xt::xarray<double> x) {
             tmp.push_back(dum);
         }
     }
-    xt::xarray<double> ans = xt::zeros<double>({rol, rol});
+    xt::xarray<double> ans = xt::zeros<double>({row, row});
 
-    for (int i = 0; i < rol; i++)
+    for (int i = 0; i < row; i++)
         for (int j = 0; j < i; j++) {
-            int ind = rol * (rol - 1) / 2 - (rol - i) * (rol - i - 1) / 2 + j - i - 1;
+            int ind = row * (row - 1) / 2 - (row - i) * (row - i - 1) / 2 + j - i - 1;
             ans(j, i) = tmp[ind];
             ans(i, j) = tmp[ind];
         }
@@ -63,9 +65,9 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
     high_resolution_clock::time_point t1, t2;
     xt::xarray<double> zscores;
 
-    int n_cells=all_strata[0].shape(0), n_bins = all_strata[0].shape(1);
+    int n_cells = all_strata[0].shape(0), n_bins = all_strata[0].shape(1);
     int all_size = all_strata.size();
-   vector<xt::xarray<double>> tmp;
+    vector<xt::xarray<double>> tmp;
     xt::xarray<double> distance_mat;
 
     if (similarity_method == "inner_product" or similarity_method == "innerproduct") {
@@ -90,18 +92,31 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
         xt::xarray<double> weighted_std = xt::zeros<double>({n_cells, n_bins});
         int i = 0;
         for (auto stratum : all_strata) {
-            xt::xarray<double> mean = xt::mean(stratum, 1)();
-            xt::xarray<double> std = xt::stddev(stratum)();
+            cout << "i=" << i << endl;
+            xt::xarray<double> mean = xt::mean(stratum, {1});
+            xt::xarray<double> std = xt::stddev(stratum, {1});
+            cout<<"Mean:\n"<<mean<<endl<<"std:\n"<<std<<"\nstrata "
+                                                        "be4\n"<<stratum<<"\nstrata after\n";
             xt::col(weighted_std, i) = sqrt(n_bins - i) * std;
-            all_strata[i] -= xt::col(mean, NULL);
+            for (int j = 0; j < mean.size(); j++) {
+                xt::row(all_strata[i], j) = xt::row(stratum, j) - mean(j);
+            }
+
+            cout << all_strata[i] << endl;
             i++;
         }
         xt::xarray<double> scores = concatenate_axis1(all_strata);
+        cout<<"scores:\n "<<scores<<endl;
+        cout<<"weighted_std:\n"<<weighted_std<<endl;
         t1 = high_resolution_clock::now();
-        xt::xarray<double> inner = xt::linalg::dot(scores, xt::transpose(scores));
+        xt::xarray<double> inner = xt::linalg::dot(scores, xt::transpose(scores)) /
+                (xt::linalg::dot(weighted_std,xt::transpose(weighted_std))+1e-8);
+
         inner[inner > 1] = 1;
         inner[inner < -1] = -1;
+        cout<<"inner: "<<inner<<endl;
         distance_mat = xt::sqrt(2 - 2 * inner);
+        cout<<"distance_mat infunc\n"<<distance_mat<<endl;
         t2 = high_resolution_clock::now();
 
     } else if (similarity_method == "old_hicrep") {

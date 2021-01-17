@@ -6,31 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/bj/CLionProjects/scHiCtools/load/processing_utils.cpp
-processing_utils.h
-/Users/bj/CLionProjects/scHiCtools/load/processing_utils.h
-
-/Users/bj/CLionProjects/scHiCtools/load/processing_utils.h
-cmath
--
-set
--
-map
--
-string
--
-fstream
--
-iostream
--
-list
+/Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.cpp
+utility
 -
 xtensor/xio.hpp
-/Users/bj/CLionProjects/scHiCtools/load/xtensor/xio.hpp
+/Users/bj/CLionProjects/scHiCtools/embedding/xtensor/xio.hpp
 xtensor/xview.hpp
-/Users/bj/CLionProjects/scHiCtools/load/xtensor/xview.hpp
+/Users/bj/CLionProjects/scHiCtools/embedding/xtensor/xview.hpp
 xtensor-blas/xlinalg.hpp
-/Users/bj/CLionProjects/scHiCtools/load/xtensor-blas/xlinalg.hpp
+/Users/bj/CLionProjects/scHiCtools/embedding/xtensor-blas/xlinalg.hpp
 
 /Users/bj/opt/anaconda3/include/xflens/cxxblas/auxiliary/auxiliary.h
 xflens/cxxblas/auxiliary/complex.h

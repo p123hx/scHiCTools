@@ -34,11 +34,11 @@ Flg file_line_generator(string file,
                         mapping_filter = 0., bool gzip = false) {
     if (gzip) throw "gzip opening not implemented yet";
     ifstream fin;
-    cout << file << endl;
+//    cout << file << endl;
     fin.open(file);
     Flg ans;
     if (fin.is_open()) {
-        cout << "opening " << file << endl;
+//        cout << "opening " << file << endl;
         if (header) {
             for (int tmp = 0; tmp < header; tmp++) {
                 string dum;
@@ -216,13 +216,12 @@ pair<xt::xarray<double>, vector<xt::xarray<double>>> load_HiC(string file, map<s
                                                                    xt::placeholders::_),
                                                xt::range(xt::placeholders::_,
                                                          matSize - i))));
-            cout<<strata[i]<<endl;
         }
     } else{
         throw "Not implemented yet";
     }
     if (sparse) throw "Not implemented yet";
-    return make_pair(mat, strata);
+    return make_pair(mat2, strata);
 
 }
 
