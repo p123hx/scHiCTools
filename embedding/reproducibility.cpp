@@ -6,6 +6,7 @@
 #include "xtensor/xio.hpp"
 #include "xtensor/xview.hpp"
 #include "xtensor-blas/xlinalg.hpp"
+#include "float.h"
 
 using namespace std;
 using namespace std::chrono;
@@ -95,8 +96,9 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
             cout << "i=" << i << endl;
             xt::xarray<double> mean = xt::mean(stratum, {1});
             xt::xarray<double> std = xt::stddev(stratum, {1});
-            cout<<"Mean:\n"<<mean<<endl<<"std:\n"<<std<<"\nstrata "
-                                                        "be4\n"<<stratum<<"\nstrata after\n";
+            cout << "Mean:\n" << mean << endl << "std:\n" << std << "\nstrata "
+                                                                    "be4\n" << stratum
+                 << "\nstrata after\n";
             xt::col(weighted_std, i) = sqrt(n_bins - i) * std;
             for (int j = 0; j < mean.size(); j++) {
                 xt::row(all_strata[i], j) = xt::row(stratum, j) - mean(j);
@@ -106,17 +108,24 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
             i++;
         }
         xt::xarray<double> scores = concatenate_axis1(all_strata);
-        cout<<"scores:\n "<<scores<<endl;
-        cout<<"weighted_std:\n"<<weighted_std<<endl;
+        cout << "scores:\n " << scores << endl;
+        cout << "weighted_std:\n" << weighted_std << endl;
         t1 = high_resolution_clock::now();
         xt::xarray<double> inner = xt::linalg::dot(scores, xt::transpose(scores)) /
-                (xt::linalg::dot(weighted_std,xt::transpose(weighted_std))+1e-8);
-
-        inner[inner > 1] = 1;
-        inner[inner < -1] = -1;
-        cout<<"inner: "<<inner<<endl;
+                                   (xt::linalg::dot(weighted_std,
+                                                    xt::transpose(weighted_std)) +
+                                    DBL_MIN);
+        cout << "dinominator:\n" << xt::linalg::dot(scores, xt::transpose(scores))
+             << "\nnumeritor\n"
+             << (xt::linalg::dot(weighted_std, xt::transpose(weighted_std)) + DBL_MIN
+             ) << "\n inner be4\n" << inner;
+        for (int i = 0; i < inner.size(); i++) {
+            if (inner(i) > 1) inner(i) = 1.0;
+            if (inner(i) < -1) inner(i) = -1.0;
+        }
+        cout << "\ninner: " << inner << endl;
         distance_mat = xt::sqrt(2 - 2 * inner);
-        cout<<"distance_mat infunc\n"<<distance_mat<<endl;
+        cout << "distance_mat infunc\n" << distance_mat << endl;
         t2 = high_resolution_clock::now();
 
     } else if (similarity_method == "old_hicrep") {
