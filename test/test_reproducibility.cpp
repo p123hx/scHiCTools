@@ -12,7 +12,7 @@ int main() {
     vector<string> fileLst{"../test/data/cell_03", "../test/data/cell_01",
                            "../test/data/cell_02"};
     vector<string> operation{"convolution"};
-    scHiCs y = scHiCs(fileLst, "mm9", 100000, 3, 4000000, false, "except Y",
+    scHiCs y = scHiCs(fileLst, "mm9", 500000, 3, 4000000, true, "except Y",
                       "shortest_score",
                       10, true,
                       operation);

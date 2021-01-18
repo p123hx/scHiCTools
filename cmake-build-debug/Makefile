@@ -103,7 +103,6 @@ all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles 0
-
 .PHONY : all
 
 # The main clean target
@@ -279,6 +278,33 @@ load/processing_utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.s
 .PHONY : load/processing_utils.cpp.s
 
+test/test_all.o: test/test_all.cpp.o
+
+.PHONY : test/test_all.o
+
+# target to build an object file
+test/test_all.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/test/test_all.cpp.o
+.PHONY : test/test_all.cpp.o
+
+test/test_all.i: test/test_all.cpp.i
+
+.PHONY : test/test_all.i
+
+# target to preprocess a source file
+test/test_all.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/test/test_all.cpp.i
+.PHONY : test/test_all.cpp.i
+
+test/test_all.s: test/test_all.cpp.s
+
+.PHONY : test/test_all.s
+
+# target to generate assembly for a file
+test/test_all.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/test/test_all.cpp.s
+.PHONY : test/test_all.cpp.s
+
 test/test_reproducibility.o: test/test_reproducibility.cpp.o
 
 .PHONY : test/test_reproducibility.o
@@ -330,6 +356,9 @@ help:
 	@echo "... load/processing_utils.o"
 	@echo "... load/processing_utils.i"
 	@echo "... load/processing_utils.s"
+	@echo "... test/test_all.o"
+	@echo "... test/test_all.i"
+	@echo "... test/test_all.s"
 	@echo "... test/test_reproducibility.o"
 	@echo "... test/test_reproducibility.i"
 	@echo "... test/test_reproducibility.s"
@@ -346,3 +375,4 @@ help:
 cmake_check_build_system:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
+
