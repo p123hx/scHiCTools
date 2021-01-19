@@ -7628,12 +7628,10 @@ CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o
  /usr/local/include/tbb/tbb_thread.h
  /usr/local/include/tbb/tick_count.h
 CMakeFiles/scHiCtools.dir/test/test_all.cpp.o
- /Users/bj/CLionProjects/scHiCtools/test/test_all.cpp
-CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o
  /Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.h
  /Users/bj/CLionProjects/scHiCtools/load/ContactMaps.h
  /Users/bj/CLionProjects/scHiCtools/load/load_hic_file.h
- /Users/bj/CLionProjects/scHiCtools/test/test_reproducibility.cpp
+ /Users/bj/CLionProjects/scHiCtools/test/test_all.cpp
  /Users/bj/opt/anaconda3/include/xflens/cxxblas/auxiliary/auxiliary.h
  /Users/bj/opt/anaconda3/include/xflens/cxxblas/auxiliary/auxiliary.tcc
  /Users/bj/opt/anaconda3/include/xflens/cxxblas/auxiliary/complex.h
@@ -9156,3 +9154,5 @@ CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o
  /usr/local/include/tbb/tbb_stddef.h
  /usr/local/include/tbb/tbb_thread.h
  /usr/local/include/tbb/tick_count.h
+CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o
+ /Users/bj/CLionProjects/scHiCtools/test/test_reproducibility.cpp
