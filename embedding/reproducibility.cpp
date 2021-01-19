@@ -52,12 +52,20 @@ xt::xarray<double> euc_pdist_square(xt::xarray<double> x) {
 
 //Note that this selfdefined zscore func is using propagating policy on axis
 xt::xarray<double> zscore_prop(xt::xarray<double> a, int axis) {
-    xt::xarray<double> mns = mean(a, {axis});
-    xt::xarray<double> sstd = stddev(a, {axis});
-    return (a - mns) / sstd;
+    xt::xarray<double> mns = xt::mean(a, {axis});
+    cout<<"Mean:\n"<<mns;
+    xt::xarray<double> sstd = xt::stddev(a, {axis});
+    cout<<"\nstd:\n"<<sstd;
+    int row = a.shape(0),col=a.shape(1);
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            a(i,j)=(a(i,j)-mns(i))/sstd(i);
+        }
+    }
+    return a;
 }
 
-xt::xarray<double>
+pair<xt::xarray<double>,double>
 pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_method,
                   bool print_time = true, double sigma = .5,
                   unsigned window_size = 10) {
@@ -75,17 +83,26 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
     if (similarity_method == "inner_product" or similarity_method == "innerproduct") {
 
         for (xt::xarray<double> stratum : all_strata) {
+            cout<<"stratum: \n"<<stratum;
+            cout<<stratum.shape(0)<<" by "<<stratum.shape(1)<<endl;
             xt::xarray<double> z = zscore_prop(stratum, 1);
             //??
-            z[xt::isnan(z)] = 0;
+            cout<<"\nz:\n"<<z;
+            for (int i = 0; i < z.size(); ++i) {
+                if(isnan(z(i))) z(i)=0.0;
+            }
             tmp.push_back(z);
 
         }
         zscores = concatenate_axis1(tmp);
+        cout<<"zscores:\n"<<zscores;
         t1 = high_resolution_clock::now();
-        xt::xarray<double> inner = xt::linalg::dot(zscores, xt::transpose(zscores));
-        inner[inner > 1] = 1;
-        inner[inner < -1] = -1;
+        xt::xarray<double> inner = xt::linalg::dot(zscores, xt::transpose(zscores))
+                /zscores.shape(1);
+        for (int i = 0; i < inner.size(); i++) {
+            if (inner(i) > 1) inner(i) = 1.0;
+            if (inner(i) < -1) inner(i) = -1.0;
+        }
         distance_mat = xt::sqrt(2 - 2 * inner);
         t2 = high_resolution_clock::now();
     } else if (similarity_method == "hicrep") {
@@ -209,7 +226,8 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
     fout<<"Time 1: "<< duration1.count() << endl<< "Time 2:" << duration2.count() <<
     endl;
     fout.close();
-    return distance_mat;
+    double tout = duration1.count();
+    return make_pair(distance_mat,tout) ;
 }
 
 

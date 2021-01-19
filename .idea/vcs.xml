@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/scHiCtools/scHiCtools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/scHiCtools/scHiCtools/hongxi@172.17.8.111/scHiCtools" vcs="Git" />
   </component>
 </project>
