@@ -6,5 +6,5 @@ CXX_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sd
 
 CXX_DEFINES = -DHAVE_CBLAS=1
 
-CXX_INCLUDES = -isystem /Users/bj/opt/anaconda3/include -isystem /usr/local/include 
+CXX_INCLUDES = -isystem /Users/bj/opt/anaconda3/include 
 

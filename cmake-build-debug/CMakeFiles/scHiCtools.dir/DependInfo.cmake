@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/bj/CLionProjects/scHiCtools/embedding/embedding.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/embedding/embedding.cpp.o"
-  "/Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.o"
-  "/Users/bj/CLionProjects/scHiCtools/load/ContactMaps.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o"
-  "/Users/bj/CLionProjects/scHiCtools/load/load_hic_file.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o"
-  "/Users/bj/CLionProjects/scHiCtools/load/processing_utils.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o"
-  "/Users/bj/CLionProjects/scHiCtools/test/test_all.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/test/test_all.cpp.o"
-  "/Users/bj/CLionProjects/scHiCtools/test/test_reproducibility.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o"
+  "/Users/bj/CLionProjects/scHiCtest/embedding/embedding.cpp" "/Users/bj/CLionProjects/scHiCtest/cmake-build-debug/CMakeFiles/scHiCtools.dir/embedding/embedding.cpp.o"
+  "/Users/bj/CLionProjects/scHiCtest/embedding/reproducibility.cpp" "/Users/bj/CLionProjects/scHiCtest/cmake-build-debug/CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.o"
+  "/Users/bj/CLionProjects/scHiCtest/load/ContactMaps.cpp" "/Users/bj/CLionProjects/scHiCtest/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o"
+  "/Users/bj/CLionProjects/scHiCtest/load/load_hic_file.cpp" "/Users/bj/CLionProjects/scHiCtest/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o"
+  "/Users/bj/CLionProjects/scHiCtest/load/processing_utils.cpp" "/Users/bj/CLionProjects/scHiCtest/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o"
+  "/Users/bj/CLionProjects/scHiCtest/test/test_all.cpp" "/Users/bj/CLionProjects/scHiCtest/cmake-build-debug/CMakeFiles/scHiCtools.dir/test/test_all.cpp.o"
+  "/Users/bj/CLionProjects/scHiCtest/test/test_reproducibility.cpp" "/Users/bj/CLionProjects/scHiCtest/cmake-build-debug/CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
@@ -22,7 +22,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/Users/bj/opt/anaconda3/include"
-  "/usr/local/include"
   )
 
 # Targets to which this target links.
