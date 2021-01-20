@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/bj/CLionProjects/scHiCtest
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/bj/CLionProjects/scHiCtools
 -- The C compiler identification is AppleClang 11.0.0.11000033
 -- The CXX compiler identification is AppleClang 11.0.0.11000033
 -- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
@@ -31,4 +31,4 @@
 -- BLAS LIBRARIES: /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Accelerate.framework
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/bj/CLionProjects/scHiCtest/cmake-build-debug
+-- Build files have been written to: /Users/bj/CLionProjects/scHiCtools/cmake-build-debug

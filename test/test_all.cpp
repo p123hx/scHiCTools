@@ -18,7 +18,7 @@ double innerP(vector<xt::xarray<double>> all_strata) {
     double time1;
     tie(pair_dis, time1) =
             pairwise_distance(all_strata, "inner_product");
-    cout << "pairwise dis: " << pair_dis << endl;
+//    cout << "pairwise dis: " << pair_dis << endl;
     return time1;
 }
 
@@ -27,7 +27,7 @@ double fastHicP(vector<xt::xarray<double>> all_strata) {
     double time1;
     tie(pair_dis, time1) =
             pairwise_distance(all_strata, "hicrep");
-    cout << "pairwise dis: " << pair_dis << endl;
+//    cout << "pairwise dis: " << pair_dis << endl;
     return time1;
 }
 int main() {
@@ -1314,9 +1314,12 @@ int main() {
     int tcout = 0;
     double tsum = 0.0;
     for (string s:chrs) {
+        cout<<"\n"<<s<<":\n";
         vector<xt::xarray<double>> chr = y100.get_strata()[s];
-        tsum += fastHicP(chr);
+        tsum += (fastHicP(chr)/100000);
         tcout++;
     }
-    cout << "time1 inner 100: " << tsum / tcout << endl;
+    cout << "time1 + time2 fastHiCrep 100 cells: " << tsum / tcout << " in seconds\n";
 }
+
+
