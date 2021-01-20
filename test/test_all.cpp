@@ -1352,6 +1352,46 @@ int main() {
     fout << "time1 + time2 selfish 100 cells: " << selfish100 / tcout << " in "
                                                                          "seconds\n";
     fout.close();
+
+
+    scHiCs y1000 = scHiCs(fileLst100, "mm9", 500000, 3, 4000000, true, "except Y",
+                          "shortest_score",
+                          10, false,
+                          operation);
+    tcout = 0;
+    double fast1000 = 0.0, inner1000 = 0.0, selfish1000 = 0.0, inner1000t1 = 0.0,
+            inner1000t2 = 0.0;
+    for (string s:chrs) {
+        cout << "\n" << s << ":\n";
+        vector<xt::xarray<double>> chr = y1000.get_strata()[s];
+        fast1000 += (fastHicP(chr) / 100000);
+        inner1000 += (innerP(chr)[0] / 100000);
+        inner1000t1 += (innerP(chr)[1] / 100000);
+        inner1000t2 += (innerP(chr)[2] / 100000);
+        selfish1000 += (selfishP(chr) / 100000);
+        tcout++;
+    }
+    cout << "inner 100 cells:\n t1: " << inner1000t1 / tcout << " t2: " << inner1000t2 /
+                                                                           tcout
+         << " total: " << inner1000 / tcout << " in "
+
+                                               "seconds\n";
+    cout << "time1 + time2 selfish 100 cells: " << selfish1000 / tcout << " in "
+                                                                          "seconds\n";
+    cout << "time1 + time2 fastHiC 100 cells: " << fast1000 / tcout << " in "
+                                                                       "seconds\n";
+
+    ofstream fout2("1000out.txt");
+    fout2 << "inner 100 cells:\n t1: " << inner1000t1 / tcout << " t2: " << inner1000t2 /
+                                                                            tcout
+          << " total: " << inner1000 / tcout << " in "
+
+                                                "seconds\n";
+    fout2 << "time1 + time2 selfish 100 cells: " << selfish1000 / tcout << " in "
+                                                                           "seconds\n"
+          << "time1 + time2 fastHiC 100 cells: " << fast1000 / tcout << " in "
+                                                                        "seconds\n";
+    fout.close();
 }
 
 
