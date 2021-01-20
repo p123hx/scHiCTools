@@ -1314,7 +1314,6 @@ int main() {
                                "../Nagano/1CDX_cells/1CDX4.311/new_adj",
                                "../Nagano/1CDX_cells/1CDX4.391/new_adj",
                                "../Nagano/1CDX_cells/1CDX4.467/new_adj"};
-
     vector<string> operation{"convolution"};
     scHiCs y100 = scHiCs(fileLst100, "mm9", 500000, 3, 4000000, true, "except Y",
                          "shortest_score",
@@ -1325,36 +1324,36 @@ int main() {
                         "chr15", "chr16", "chr17", "chr18", "chr19"}; //No chrY since
     // "except Y" in scHiCs
     int tcout = 0;
-    double inner100 = 0.0, selfish100 = 0.0, inner100t1 = 0.0, inner100t2 = 0.0;
+    double inner100 = 0.0, selfish100 = 0.0, inner100t1 = 0.0, inner100t2 = 0.0,
+            fast100 = 0.0;
     for (string s:chrs) {
         cout << "\n" << s << ":\n";
         vector<xt::xarray<double>> chr = y100.get_strata()[s];
-        inner100 += (innerP(chr)[0] / 100000);
-        inner100t1 += (innerP(chr)[1] / 100000);
-        inner100t2 += (innerP(chr)[2] / 100000);
-        selfish100 += (selfishP(chr) / 100000);
+        fast100 += (fastHicP(chr) / 1000000);
+        inner100 += (innerP(chr)[0] / 1000000);
+        inner100t1 += (innerP(chr)[1] / 1000000);
+        inner100t2 += (innerP(chr)[2] / 1000000);
+        selfish100 += (selfishP(chr) / 1000000);
         tcout++;
     }
-    cout << "inner 100 cells:\n t1: " << inner100t1 / tcout << " t2: " << inner100t2 /
-                                                                          tcout
-         << " total: " << inner100 / tcout << " in "
-
-                                              "seconds\n";
-    cout << "time1 + time2 selfish 100 cells: " << selfish100 / tcout << " in "
-                                                                         "seconds\n";
+    cout << "inner 100 cells:\n t1: " << inner100t1 << " t2: " << inner100t2
+         << " total: " << inner100 << " in seconds\n";
+    cout << "time1 + time2 selfish 100 cells: " << selfish100 << " in "
+                                                                 "seconds\n"
+            << "fast 100:\n"<<fast100<<endl;
 
     ofstream fout("100out.txt");
-    fout << "inner 100 cells:\n t1: " << inner100t1 / tcout << " t2: " << inner100t2 /
-                                                                          tcout
-         << " total: " << inner100 / tcout << " in "
+    fout << "inner 100 cells:\n t1: " << inner100t1 << " t2: " << inner100t2
+         << " total: " << inner100 << " in "
 
-                                              "seconds\n";
-    fout << "time1 + time2 selfish 100 cells: " << selfish100 / tcout << " in "
-                                                                         "seconds\n";
+                                      "seconds\n";
+    fout << "time1 + time2 selfish 100 cells: " << selfish100 << " in "
+                                                                 "seconds\n"
+         << "fast 100:\n"<<fast100<<endl;
     fout.close();
 
-
-    scHiCs y1000 = scHiCs(fileLst100, "mm9", 500000, 3, 4000000, true, "except Y",
+/*
+    scHiCs y1000 = scHiCs(fileLst1000, "mm9", 500000, 3, 4000000, true, "except Y",
                           "shortest_score",
                           10, false,
                           operation);
@@ -1364,34 +1363,34 @@ int main() {
     for (string s:chrs) {
         cout << "\n" << s << ":\n";
         vector<xt::xarray<double>> chr = y1000.get_strata()[s];
-        fast1000 += (fastHicP(chr) / 100000);
-        inner1000 += (innerP(chr)[0] / 100000);
-        inner1000t1 += (innerP(chr)[1] / 100000);
-        inner1000t2 += (innerP(chr)[2] / 100000);
-        selfish1000 += (selfishP(chr) / 100000);
+        fast1000 += (fastHicP(chr) / 1000000);
+        inner1000 += (innerP(chr)[0] / 1000000);
+        inner1000t1 += (innerP(chr)[1] / 1000000);
+        inner1000t2 += (innerP(chr)[2] / 1000000);
+        selfish1000 += (selfishP(chr) / 1000000);
         tcout++;
     }
-    cout << "inner 100 cells:\n t1: " << inner1000t1 / tcout << " t2: " << inner1000t2 /
+    cout << "inner 100 cells:\n t1: " << inner1000t1   << " t2: " << inner1000t2 /
                                                                            tcout
-         << " total: " << inner1000 / tcout << " in "
+         << " total: " << inner1000   << " in "
 
                                                "seconds\n";
-    cout << "time1 + time2 selfish 100 cells: " << selfish1000 / tcout << " in "
+    cout << "time1 + time2 selfish 100 cells: " << selfish1000   << " in "
                                                                           "seconds\n";
-    cout << "time1 + time2 fastHiC 100 cells: " << fast1000 / tcout << " in "
+    cout << "time1 + time2 fastHiC 100 cells: " << fast1000   << " in "
                                                                        "seconds\n";
 
     ofstream fout2("1000out.txt");
-    fout2 << "inner 100 cells:\n t1: " << inner1000t1 / tcout << " t2: " << inner1000t2 /
+    fout2 << "inner 1000 cells:\n t1: " << inner1000t1   << " t2: " << inner1000t2 /
                                                                             tcout
-          << " total: " << inner1000 / tcout << " in "
+          << " total: " << inner1000   << " in "
 
                                                 "seconds\n";
-    fout2 << "time1 + time2 selfish 100 cells: " << selfish1000 / tcout << " in "
+    fout2 << "selfish 1000 cells: " << selfish1000   << " in "
                                                                            "seconds\n"
-          << "time1 + time2 fastHiC 100 cells: " << fast1000 / tcout << " in "
+          << "fastHiC 1000 cells: " << fast1000   << " in "
                                                                         "seconds\n";
-    fout.close();
+    fout2.close(); */
 }
 
 

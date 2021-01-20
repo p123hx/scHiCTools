@@ -53,9 +53,7 @@ xt::xarray<double> euc_pdist_square(xt::xarray<double> x) {
 //Note that this selfdefined zscore func is using propagating policy on axis
 xt::xarray<double> zscore_prop(xt::xarray<double> a, int axis) {
     xt::xarray<double> mns = xt::mean(a, {axis});
-    cout<<"Mean:\n"<<mns;
     xt::xarray<double> sstd = xt::stddev(a, {axis});
-    cout<<"\nstd:\n"<<sstd;
     int row = a.shape(0),col=a.shape(1);
     for(int i=0;i<row;i++){
         for(int j=0;j<col;j++){
@@ -83,11 +81,8 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
     if (similarity_method == "inner_product" or similarity_method == "innerproduct") {
 
         for (xt::xarray<double> stratum : all_strata) {
-            cout<<"stratum: \n"<<stratum;
-            cout<<stratum.shape(0)<<" by "<<stratum.shape(1)<<endl;
             xt::xarray<double> z = zscore_prop(stratum, 1);
             //??
-            cout<<"\nz:\n"<<z;
             for (int i = 0; i < z.size(); ++i) {
                 if(isnan(z(i))) z(i)=0.0;
             }
@@ -95,7 +90,6 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
 
         }
         zscores = concatenate_axis1(tmp);
-        cout<<"\nzscores:\n"<<zscores;
         t1 = high_resolution_clock::now();
         xt::xarray<double> inner = xt::linalg::dot(zscores, xt::transpose(zscores))
                 /zscores.shape(1);
@@ -221,11 +215,6 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
 //    }
     cout << "Time 1:" << duration1.count() << endl
          << "Time 2:" << duration2.count() << endl;
-    ofstream fout;
-    fout.open("time_test.txt");
-    fout<<"Time 1: "<< duration1.count() << endl<< "Time 2:" << duration2.count() <<
-    endl;
-    fout.close();
 
     vector<double> tout {(double)(duration1.count()+duration2.count()),(double)(duration1
     .count()),
