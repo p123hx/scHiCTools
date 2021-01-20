@@ -65,7 +65,7 @@ xt::xarray<double> zscore_prop(xt::xarray<double> a, int axis) {
     return a;
 }
 
-pair<xt::xarray<double>,double>
+pair<xt::xarray<double>,vector<double>>
 pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_method,
                   bool print_time = true, double sigma = .5,
                   unsigned window_size = 10) {
@@ -226,7 +226,10 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
     fout<<"Time 1: "<< duration1.count() << endl<< "Time 2:" << duration2.count() <<
     endl;
     fout.close();
-    double tout = duration1.count();
+
+    vector<double> tout {(double)(duration1.count()+duration2.count()),(double)(duration1
+    .count()),
+                         (double)duration2.count()};
     return make_pair(distance_mat,tout) ;
 }
 

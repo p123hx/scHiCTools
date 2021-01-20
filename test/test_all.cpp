@@ -10,26 +10,38 @@
 #include "xtensor/xio.hpp"
 #include "../load/ContactMaps.h"
 #include "../embedding/reproducibility.h"
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
-double innerP(vector<xt::xarray<double>> all_strata) {
+vector<double> innerP(vector<xt::xarray<double>> all_strata) {
     xt::xarray<double> pair_dis;
-    double time1;
-    tie(pair_dis, time1) =
+    vector<double> times;
+    tie(pair_dis, times) =
             pairwise_distance(all_strata, "inner_product");
 //    cout << "pairwise dis: " << pair_dis << endl;
-    return time1;
+    return times;
 }
 
 double fastHicP(vector<xt::xarray<double>> all_strata) {
     xt::xarray<double> pair_dis;
-    double time1;
-    tie(pair_dis, time1) =
+    vector<double> times;
+    tie(pair_dis, times) =
             pairwise_distance(all_strata, "hicrep");
 //    cout << "pairwise dis: " << pair_dis << endl;
-    return time1;
+    return times[0];
 }
+
+double selfishP(vector<xt::xarray<double>> all_strata) {
+    xt::xarray<double> pair_dis;
+    vector<double> times;
+    tie(pair_dis, times) =
+            pairwise_distance(all_strata, "selfish");
+//    cout << "pairwise dis: " << pair_dis << endl;
+    return times[0];
+}
+
 int main() {
     vector<string> fileLst100{"../Nagano/1CDX_cells/1CDX1.1/new_adj",
                               "../Nagano/1CDX_cells/1CDX1.185/new_adj",
@@ -1310,16 +1322,36 @@ int main() {
                          operation);
     vector<string> chrs{"chr1", "chr2", "chrX", "chr3", "chr4", "chr5", "chr6", "chr7",
                         "chr8", "chr9", "chr10", "chr11", "chr12", "chr13", "chr14",
-                        "chr15", "chr16", "chr17", "chr18", "chr19", "chrY"};
+                        "chr15", "chr16", "chr17", "chr18", "chr19"}; //No chrY since
+    // "except Y" in scHiCs
     int tcout = 0;
-    double tsum = 0.0;
+    double inner100 = 0.0, selfish100 = 0.0, inner100t1 = 0.0, inner100t2 = 0.0;
     for (string s:chrs) {
-        cout<<"\n"<<s<<":\n";
+        cout << "\n" << s << ":\n";
         vector<xt::xarray<double>> chr = y100.get_strata()[s];
-        tsum += (fastHicP(chr)/100000);
+        inner100 += (innerP(chr)[0] / 100000);
+        inner100t1 += (innerP(chr)[1] / 100000);
+        inner100t2 += (innerP(chr)[2] / 100000);
+        selfish100 += (selfishP(chr) / 100000);
         tcout++;
     }
-    cout << "time1 + time2 fastHiCrep 100 cells: " << tsum / tcout << " in seconds\n";
+    cout << "inner 100 cells:\n t1: " << inner100t1 / tcout << " t2: " << inner100t2 /
+                                                                          tcout
+         << " total: " << inner100 / tcout << " in "
+
+                                              "seconds\n";
+    cout << "time1 + time2 selfish 100 cells: " << selfish100 / tcout << " in "
+                                                                         "seconds\n";
+
+    ofstream fout("100out.txt");
+    fout << "inner 100 cells:\n t1: " << inner100t1 / tcout << " t2: " << inner100t2 /
+                                                                          tcout
+         << " total: " << inner100 / tcout << " in "
+
+                                              "seconds\n";
+    fout << "time1 + time2 selfish 100 cells: " << selfish100 / tcout << " in "
+                                                                         "seconds\n";
+    fout.close();
 }
 
 
