@@ -95,7 +95,7 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
 
         }
         zscores = concatenate_axis1(tmp);
-        cout<<"zscores:\n"<<zscores;
+        cout<<"\nzscores:\n"<<zscores;
         t1 = high_resolution_clock::now();
         xt::xarray<double> inner = xt::linalg::dot(zscores, xt::transpose(zscores))
                 /zscores.shape(1);
