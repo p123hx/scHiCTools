@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/Users/bj/CLionProjects/scHiCtest/embedding/reproducibility.h
+/Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.h
 utility
 -
 xtensor/xio.hpp
-/Users/bj/CLionProjects/scHiCtest/embedding/xtensor/xio.hpp
+/Users/bj/CLionProjects/scHiCtools/embedding/xtensor/xio.hpp
 xtensor/xview.hpp
-/Users/bj/CLionProjects/scHiCtest/embedding/xtensor/xview.hpp
+/Users/bj/CLionProjects/scHiCtools/embedding/xtensor/xview.hpp
 xtensor-blas/xlinalg.hpp
-/Users/bj/CLionProjects/scHiCtest/embedding/xtensor-blas/xlinalg.hpp
+/Users/bj/CLionProjects/scHiCtools/embedding/xtensor-blas/xlinalg.hpp
 
-/Users/bj/CLionProjects/scHiCtest/load/ContactMaps.h
+/Users/bj/CLionProjects/scHiCtools/load/ContactMaps.h
 string
 -
 load_hic_file.h
-/Users/bj/CLionProjects/scHiCtest/load/load_hic_file.h
+/Users/bj/CLionProjects/scHiCtools/load/load_hic_file.h
 vector
 -
 set
@@ -28,7 +28,7 @@ set
 map
 -
 
-/Users/bj/CLionProjects/scHiCtest/load/load_hic_file.h
+/Users/bj/CLionProjects/scHiCtools/load/load_hic_file.h
 cmath
 -
 set
@@ -44,19 +44,23 @@ iostream
 list
 -
 xtensor/xio.hpp
-/Users/bj/CLionProjects/scHiCtest/load/xtensor/xio.hpp
+/Users/bj/CLionProjects/scHiCtools/load/xtensor/xio.hpp
 xtensor/xview.hpp
-/Users/bj/CLionProjects/scHiCtest/load/xtensor/xview.hpp
+/Users/bj/CLionProjects/scHiCtools/load/xtensor/xview.hpp
 xtensor-blas/xlinalg.hpp
-/Users/bj/CLionProjects/scHiCtest/load/xtensor-blas/xlinalg.hpp
+/Users/bj/CLionProjects/scHiCtools/load/xtensor-blas/xlinalg.hpp
 
-/Users/bj/CLionProjects/scHiCtest/test/test_reproducibility.cpp
+/Users/bj/CLionProjects/scHiCtools/test/test_all.cpp
 xtensor/xio.hpp
-/Users/bj/CLionProjects/scHiCtest/test/xtensor/xio.hpp
+/Users/bj/CLionProjects/scHiCtools/test/xtensor/xio.hpp
 ../load/ContactMaps.h
-/Users/bj/CLionProjects/scHiCtest/load/ContactMaps.h
+/Users/bj/CLionProjects/scHiCtools/load/ContactMaps.h
 ../embedding/reproducibility.h
-/Users/bj/CLionProjects/scHiCtest/embedding/reproducibility.h
+/Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.h
+iostream
+-
+fstream
+-
 
 /Users/bj/opt/anaconda3/include/xflens/cxxblas/auxiliary/auxiliary.h
 xflens/cxxblas/auxiliary/complex.h

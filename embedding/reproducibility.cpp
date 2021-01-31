@@ -87,7 +87,6 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
                 if(isnan(z(i))) z(i)=0.0;
             }
             tmp.push_back(z);
-
         }
         zscores = concatenate_axis1(tmp);
         t1 = high_resolution_clock::now();
@@ -203,7 +202,7 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
         distance_mat = xt::sqrt(2 - 2 * xt::exp(-sigma * distance));
         t2 = high_resolution_clock::now();
     } else {
-        throw "Method {0} not supported. Only \"inner_product\", \"HiCRep\", \"old_hicrep\" and \"Selfish\".";
+        throw R"(Method {0} not supported. Only "inner_product", "HiCRep", "old_hicrep" and "Selfish".)";
     }
 
 
