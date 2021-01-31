@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.cpp
+utility
+-
+fstream
+-
+xtensor/xio.hpp
+/Users/bj/CLionProjects/scHiCtools/embedding/xtensor/xio.hpp
+xtensor/xview.hpp
+/Users/bj/CLionProjects/scHiCtools/embedding/xtensor/xview.hpp
+xtensor-blas/xlinalg.hpp
+/Users/bj/CLionProjects/scHiCtools/embedding/xtensor-blas/xlinalg.hpp
+float.h
+/Users/bj/CLionProjects/scHiCtools/embedding/float.h
+
 /Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.h
 utility
 -

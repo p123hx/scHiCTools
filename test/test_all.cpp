@@ -1280,14 +1280,14 @@ void test(){
         for (string s:chrs) {
             cout << "\n" << s << ":\n";
             vector<xt::xarray<double>> chr = y.get_strata()[s];
-            tsum += (oldHicP(chr) / 100000);
+            tsum += (fastHicP(chr) / 100000);
         }
     }
 
     cout << "Total average fastHiCrep test " << tsum<< " in milliseconds\n";
 }
 int main() {
-toolN(100);
+test();
 }
 
 
