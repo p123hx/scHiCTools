@@ -157,7 +157,7 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
                         weights(ind_old) = (n_bins * xt::stddev(s1)() *
                                             xt::stddev(s2)());
                         corrs(ind_old) = (pearsoncoeff(s1, s2, n_bins));
-
+                        cout<<"corr: "<<corrs(ind_old)<<endl;
                     }
                     ind_old++;
                 }
@@ -172,7 +172,7 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
         t2 = high_resolution_clock::now();
     } else if (similarity_method == "selfish") {
         int n_windows = n_bins / window_size;
-        xt::xarray<double> all_windows = xt::zeros<double>({n_cells, n_bins});
+        xt::xarray<double> all_windows = xt::zeros<double>({n_cells, n_windows});
         int stra_i = 0;
         for (auto stratum : all_strata) {
             for (int j = 0; j < n_windows; j++) {
@@ -195,7 +195,7 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
             for (int j = 0; j < n_windows - i - 1; j++) {
                 xt::col(fingerprints, k) =
                         xt::col(all_windows, i) > xt::col(all_windows, j);
-                k += 1;
+                k++;
             }
         xt::xarray<double> distance = euc_pdist_square(fingerprints);
 

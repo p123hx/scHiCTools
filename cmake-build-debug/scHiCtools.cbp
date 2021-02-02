@@ -117,9 +117,6 @@
 		<Unit filename="/Users/bj/CLionProjects/scHiCtools/test/test_all.cpp">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/test/test_reproducibility.cpp">
-			<Option target="scHiCtools"/>
-		</Unit>
 		<Unit filename="/Users/bj/CLionProjects/scHiCtools/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

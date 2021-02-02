@@ -305,33 +305,6 @@ test/test_all.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/test/test_all.cpp.s
 .PHONY : test/test_all.cpp.s
 
-test/test_reproducibility.o: test/test_reproducibility.cpp.o
-
-.PHONY : test/test_reproducibility.o
-
-# target to build an object file
-test/test_reproducibility.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.o
-.PHONY : test/test_reproducibility.cpp.o
-
-test/test_reproducibility.i: test/test_reproducibility.cpp.i
-
-.PHONY : test/test_reproducibility.i
-
-# target to preprocess a source file
-test/test_reproducibility.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.i
-.PHONY : test/test_reproducibility.cpp.i
-
-test/test_reproducibility.s: test/test_reproducibility.cpp.s
-
-.PHONY : test/test_reproducibility.s
-
-# target to generate assembly for a file
-test/test_reproducibility.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/test/test_reproducibility.cpp.s
-.PHONY : test/test_reproducibility.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -359,9 +332,6 @@ help:
 	@echo "... test/test_all.o"
 	@echo "... test/test_all.i"
 	@echo "... test/test_all.s"
-	@echo "... test/test_reproducibility.o"
-	@echo "... test/test_reproducibility.i"
-	@echo "... test/test_reproducibility.s"
 .PHONY : help
 
 

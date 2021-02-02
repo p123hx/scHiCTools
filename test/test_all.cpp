@@ -29,7 +29,7 @@ double fastHicP(vector<xt::xarray<double>> all_strata) {
     vector<double> times;
     tie(pair_dis, times) =
             pairwise_distance(all_strata, "hicrep");
-//    cout << "pairwise dis: " << pair_dis << endl;
+   cout << "pairwise dis: " << pair_dis << endl;
     return times[0];
 }
 
@@ -38,7 +38,7 @@ double selfishP(vector<xt::xarray<double>> all_strata) {
     vector<double> times;
     tie(pair_dis, times) =
             pairwise_distance(all_strata, "selfish");
-//    cout << "pairwise dis: " << pair_dis << endl;
+    cout << "pairwise dis: " << pair_dis << endl;
     return times[0];
 }
 
@@ -1266,7 +1266,8 @@ void toolN(int n){
     fout.close();
 }
 void test(){
-    vector<string> fileLst{"../test/data/cell_03","../test/data/cell_01","../test/data/cell_02"};
+    vector<string> fileLst{"../NaganoPartial/1CDX1.1/new_adj","../NaganoPartial/1CDX1"
+                                                              ".2/new_adj"};
     vector<string> operation{"convolution"};
     scHiCs y = scHiCs(fileLst, "mm9", 500000, 3, 4000000, true, "except Y",
                       "shortest_score",
@@ -1280,7 +1281,7 @@ void test(){
         for (string s:chrs) {
             cout << "\n" << s << ":\n";
             vector<xt::xarray<double>> chr = y.get_strata()[s];
-            tsum += (fastHicP(chr) / 100000);
+            tsum += (selfishP(chr) / 100000);
         }
     }
 

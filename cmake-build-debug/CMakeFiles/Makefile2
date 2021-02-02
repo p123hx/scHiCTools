@@ -94,12 +94,12 @@ clean: CMakeFiles/scHiCtools.dir/clean
 CMakeFiles/scHiCtools.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scHiCtools.dir/build.make CMakeFiles/scHiCtools.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target scHiCtools"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target scHiCtools"
 .PHONY : CMakeFiles/scHiCtools.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/scHiCtools.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/scHiCtools.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/scHiCtools.dir/rule
