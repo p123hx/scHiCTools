@@ -16,26 +16,6 @@ xtensor/xview.hpp
 xtensor-blas/xlinalg.hpp
 /Users/bj/CLionProjects/scHiCTools/embedding/xtensor-blas/xlinalg.hpp
 
-/Users/bj/CLionProjects/scHiCTools/load/ContactMaps.cpp
-string
--
-ContactMaps.h
-/Users/bj/CLionProjects/scHiCTools/load/ContactMaps.h
-load_hic_file.h
-/Users/bj/CLionProjects/scHiCTools/load/load_hic_file.h
-vector
--
-set
--
-xtensor/xio.hpp
-/Users/bj/CLionProjects/scHiCTools/load/xtensor/xio.hpp
-xtensor/xview.hpp
-/Users/bj/CLionProjects/scHiCTools/load/xtensor/xview.hpp
-xtensor-blas/xlinalg.hpp
-/Users/bj/CLionProjects/scHiCTools/load/xtensor-blas/xlinalg.hpp
-map
--
-
 /Users/bj/CLionProjects/scHiCTools/load/ContactMaps.h
 string
 -

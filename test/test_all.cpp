@@ -12,7 +12,7 @@ vector<double> innerP(vector<xt::xarray<double>> all_strata) {
     vector<double> times;
     tie(pair_dis, times) =
             pairwise_distance(all_strata, "inner_product");
-    cout << "pairwise dis: " << pair_dis << endl;
+//    cout << "pairwise dis: " << pair_dis << endl;
     return times;
 }
 
@@ -1384,9 +1384,9 @@ void allNew(int n){
          << innerTt2 << " t3: " << innerTt3 << " t4: " << innerTt4
          << endl;
     fout.close();
-    allF<<n<<","<<fastT<<","<<fastTt1<<","<<fastTt2<<","<<fastTt3<<","<<fastTt4<<"\n";
+    allF<<n<<","<<fastT<<","<<fastTt1<<","<<fastTt2<<","<<fastTt3<<","<<fastTt4<<endl;
     allI<<n<<","<<innerT<<","<<innerTt1<<","<<innerTt2<<","<<innerTt3<<","
-                                                                       ""<<innerTt4<<"\n";
+                                                                       ""<<innerTt4<<endl;
     for (int cellC = n; cellC < 1000; cellC += n) {
         vector<string> fileLst100(fileLst1000.begin() + cellC, fileLst1000.begin() +
                                                                n + cellC);
