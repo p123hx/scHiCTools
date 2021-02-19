@@ -1384,6 +1384,7 @@ void allNew(int n){
          << innerTt2 << " t3: " << innerTt3 << " t4: " << innerTt4
          << endl;
     fout.close();
+    cout<<"WRITING!\n";
     allF<<n<<","<<fastT<<","<<fastTt1<<","<<fastTt2<<","<<fastTt3<<","<<fastTt4<<endl;
     allI<<n<<","<<innerT<<","<<innerTt1<<","<<innerTt2<<","<<innerTt3<<","
                                                                        ""<<innerTt4<<endl;
@@ -1488,7 +1489,7 @@ void allNew(int n){
              << innerTt2 << " t3: " << innerTt3 << " t4: " << innerTt4
              << endl;
         fout.close();
-
+        cout<<"WRITING!\n";
         allF<<cellC + n<<","<<fastT<<","<<fastTt1<<","<<fastTt2<<","<<fastTt3<<","<<fastTt4<<"\n";
         allI<<cellC + n<<","<<innerT<<","<<innerTt1<<","<<innerTt2<<","<<innerTt3<<","<<innerTt4<<"\n";
     }
@@ -1530,7 +1531,7 @@ void test(){
     vector<double> tmpD = innerP(chr);
 }
 int main() {
-allNew(20);
+allNew(3);
 }
 
 
