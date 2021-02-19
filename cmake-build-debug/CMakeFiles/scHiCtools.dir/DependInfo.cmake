@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/bj/CLionProjects/scHiCtools/embedding/embedding.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/embedding/embedding.cpp.o"
-  "/Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.o"
-  "/Users/bj/CLionProjects/scHiCtools/load/ContactMaps.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o"
-  "/Users/bj/CLionProjects/scHiCtools/load/load_hic_file.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o"
-  "/Users/bj/CLionProjects/scHiCtools/load/processing_utils.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o"
-  "/Users/bj/CLionProjects/scHiCtools/test/test_all.cpp" "/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/CMakeFiles/scHiCtools.dir/test/test_all.cpp.o"
+  "/Users/bj/CLionProjects/scHiCTools/embedding/embedding.cpp" "/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/CMakeFiles/scHiCtools.dir/embedding/embedding.cpp.o"
+  "/Users/bj/CLionProjects/scHiCTools/embedding/reproducibility.cpp" "/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/CMakeFiles/scHiCtools.dir/embedding/reproducibility.cpp.o"
+  "/Users/bj/CLionProjects/scHiCTools/load/ContactMaps.cpp" "/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/ContactMaps.cpp.o"
+  "/Users/bj/CLionProjects/scHiCTools/load/load_hic_file.cpp" "/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/load_hic_file.cpp.o"
+  "/Users/bj/CLionProjects/scHiCTools/load/processing_utils.cpp" "/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/CMakeFiles/scHiCtools.dir/load/processing_utils.cpp.o"
+  "/Users/bj/CLionProjects/scHiCTools/test/test_all.cpp" "/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/CMakeFiles/scHiCtools.dir/test/test_all.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

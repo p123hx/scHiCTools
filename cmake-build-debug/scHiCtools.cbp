@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\opt\;CMake Files\..\..\opt\anaconda3\;CMake Files\..\..\opt\anaconda3\lib\;CMake Files\..\..\opt\anaconda3\lib\cmake\;CMake Files\..\..\opt\anaconda3\lib\cmake\xtl\;CMake Files\..\..\opt\anaconda3\lib\cmake\xtensor\;CMake Files\..\..\opt\anaconda3\lib\cmake\xtensor-blas\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\TBB\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug"/>
+				<Option working_dir="/Users/bj/CLionProjects/scHiCTools/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug"/>
+				<Option working_dir="/Users/bj/CLionProjects/scHiCTools/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug"/>
+				<Option working_dir="/Users/bj/CLionProjects/scHiCTools/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="scHiCtools">
-				<Option output="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/scHiCtools" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug"/>
+				<Option output="/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/scHiCtools" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/bj/CLionProjects/scHiCTools/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 scHiCtools"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 scHiCtools"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="scHiCtools/fast">
-				<Option output="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/scHiCtools" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/bj/CLionProjects/scHiCtools/cmake-build-debug"/>
+				<Option output="/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/scHiCtools" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/bj/CLionProjects/scHiCTools/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,80 +77,80 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 scHiCtools/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCtools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 scHiCtools/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/bj/CLionProjects/scHiCTools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/embedding/embedding.cpp">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/embedding/embedding.cpp">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/embedding/embedding.h">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/embedding/embedding.h">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.cpp">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/embedding/reproducibility.cpp">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/embedding/reproducibility.h">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/embedding/reproducibility.h">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/ContactMaps.cpp">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/load/ContactMaps.cpp">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/ContactMaps.h">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/load/ContactMaps.h">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/load_hic_file.cpp">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/load/load_hic_file.cpp">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/load_hic_file.h">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/load/load_hic_file.h">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/processing_utils.cpp">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/load/processing_utils.cpp">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/load/processing_utils.h">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/load/processing_utils.h">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/test/test_all.cpp">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/test/test_all.cpp">
 			<Option target="scHiCtools"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/CMakeLists.txt">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../opt/anaconda3/lib/cmake/xtl/xtlConfig.cmake">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/../../opt/anaconda3/lib/cmake/xtl/xtlConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\opt\anaconda3\lib\cmake\xtl\"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../opt/anaconda3/lib/cmake/xtl/xtlConfigVersion.cmake">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/../../opt/anaconda3/lib/cmake/xtl/xtlConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\opt\anaconda3\lib\cmake\xtl\"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../opt/anaconda3/lib/cmake/xtl/xtlTargets.cmake">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/../../opt/anaconda3/lib/cmake/xtl/xtlTargets.cmake">
 			<Option virtualFolder="CMake Files\..\..\opt\anaconda3\lib\cmake\xtl\"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../opt/anaconda3/lib/cmake/xtensor/xtensorConfig.cmake">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/../../opt/anaconda3/lib/cmake/xtensor/xtensorConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\opt\anaconda3\lib\cmake\xtensor\"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../opt/anaconda3/lib/cmake/xtensor/xtensorConfigVersion.cmake">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/../../opt/anaconda3/lib/cmake/xtensor/xtensorConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\opt\anaconda3\lib\cmake\xtensor\"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../opt/anaconda3/lib/cmake/xtensor/xtensorTargets.cmake">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/../../opt/anaconda3/lib/cmake/xtensor/xtensorTargets.cmake">
 			<Option virtualFolder="CMake Files\..\..\opt\anaconda3\lib\cmake\xtensor\"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../opt/anaconda3/lib/cmake/xtensor-blas/xtensor-blasConfig.cmake">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/../../opt/anaconda3/lib/cmake/xtensor-blas/xtensor-blasConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\opt\anaconda3\lib\cmake\xtensor-blas\"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../opt/anaconda3/lib/cmake/xtensor-blas/xtensor-blasConfigVersion.cmake">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/../../opt/anaconda3/lib/cmake/xtensor-blas/xtensor-blasConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\opt\anaconda3\lib\cmake\xtensor-blas\"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../opt/anaconda3/lib/cmake/xtensor-blas/xtensor-blasTargets.cmake">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/../../opt/anaconda3/lib/cmake/xtensor-blas/xtensor-blasTargets.cmake">
 			<Option virtualFolder="CMake Files\..\..\opt\anaconda3\lib\cmake\xtensor-blas\"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../../../usr/local/lib/cmake/TBB/TBBConfig.cmake">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/../../../../usr/local/lib/cmake/TBB/TBBConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\TBB\"/>
 		</Unit>
-		<Unit filename="/Users/bj/CLionProjects/scHiCtools/../../../../usr/local/lib/cmake/TBB/TBBConfigVersion.cmake">
+		<Unit filename="/Users/bj/CLionProjects/scHiCTools/../../../../usr/local/lib/cmake/TBB/TBBConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\TBB\"/>
 		</Unit>
 	</Project>

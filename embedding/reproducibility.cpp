@@ -70,7 +70,7 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
     transform(similarity_method.begin(), similarity_method.end(),
               similarity_method.begin(), ::tolower);
     auto t0 = high_resolution_clock::now();
-    high_resolution_clock::time_point t1, t2;
+    high_resolution_clock::time_point t1, t2,t3,t4;
     xt::xarray<double> zscores;
 
     int n_cells = all_strata[0].shape(0), n_bins = all_strata[0].shape(1);
@@ -88,20 +88,22 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
             }
             tmp.push_back(z);
         }
-        zscores = concatenate_axis1(tmp);
         t1 = high_resolution_clock::now();
+        zscores = concatenate_axis1(tmp);
+        t2 = high_resolution_clock::now();
         xt::xarray<double> inner = xt::linalg::dot(zscores, xt::transpose(zscores))
                 /zscores.shape(1);
+        t3 = high_resolution_clock::now();
         for (int i = 0; i < inner.size(); i++) {
             if (inner(i) > 1) inner(i) = 1.0;
             if (inner(i) < -1) inner(i) = -1.0;
         }
         distance_mat = xt::sqrt(2 - 2 * inner);
-        t2 = high_resolution_clock::now();
+        t4 = high_resolution_clock::now();
     } else if (similarity_method == "hicrep") {
 
         int n_strata = all_strata.size();
-        xt::xarray<double> weighted_std = xt::zeros<double>({n_cells, n_bins});
+        xt::xarray<double> weighted_std = xt::zeros<double>({n_cells, n_strata});
         int i = 0;
         for (auto stratum : all_strata) {
 //            cout << "i=" << i << endl;
@@ -118,14 +120,16 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
 //            cout << all_strata[i] << endl;
             i++;
         }
+        t1 = high_resolution_clock::now();
         xt::xarray<double> scores = concatenate_axis1(all_strata);
+        t2 = high_resolution_clock::now();
 //        cout << "scores:\n " << scores << endl;
 //        cout << "weighted_std:\n" << weighted_std << endl;
-        t1 = high_resolution_clock::now();
         xt::xarray<double> inner = xt::linalg::dot(scores, xt::transpose(scores)) /
                                    (xt::linalg::dot(weighted_std,
                                                     xt::transpose(weighted_std)) +
                                     DBL_MIN);
+        t3 = high_resolution_clock::now();
 //        cout << "dinominator:\n" << xt::linalg::dot(scores, xt::transpose(scores))
 //             << "\nnumeritor\n"
 //             << (xt::linalg::dot(weighted_std, xt::transpose(weighted_std)) + DBL_MIN
@@ -137,7 +141,7 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
 //        cout << "\ninner: " << inner << endl;
         distance_mat = xt::sqrt(2 - 2 * inner);
 //        cout << "distance_mat infunc\n" << distance_mat << endl;
-        t2 = high_resolution_clock::now();
+        t4 = high_resolution_clock::now();
 
     } else if (similarity_method == "old_hicrep") {
 
@@ -206,18 +210,24 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
     }
 
 
-    auto duration1 = duration_cast<microseconds>(t1 - t0);
-    auto duration2 = duration_cast<microseconds>(t2 - t1);
+    std::chrono::duration<double, std::milli> duration1 = (t1 - t0);
+    std::chrono::duration<double, std::milli> duration2 = (t2 - t1);
+    std::chrono::duration<double, std::milli> duration3 = (t3 - t2);
+    std::chrono::duration<double, std::milli> duration4 = (t4 - t3);
+    std::chrono::duration<double, std::milli> multiplication = (t4 - t1);
+    std::chrono::duration<double, std::milli> duration_total = (t4 - t0);
 //    if (print_time) {
 //        cout << "Time 1:" << duration1.count() << endl
 //             << "Time 2:" << duration2.count() << endl;
 //    }
-    cout << "Time 1:" << duration1.count() << endl
-         << "Time 2:" << duration2.count() << endl;
+    double ttotal = duration_total.count(), tmul=multiplication.count(), tout1 =
+            duration1.count(),
+    tout2 = duration2.count(), tout3=duration3.count(),tout4=duration4.count();
+//    cout << "Time 1:" << duration1.count() << endl
+//         << "Time 2:" << duration2.count() << endl;
 
-    vector<double> tout {(double)(duration1.count()+duration2.count()),(double)(duration1
-    .count()),
-                         (double)duration2.count()};
+    vector<double> tout {(double) ttotal,tmul, (double) tout1, (double) tout2,(double)tout3,
+                         (double)tout4} ;
     return make_pair(distance_mat,tout) ;
 }
 
