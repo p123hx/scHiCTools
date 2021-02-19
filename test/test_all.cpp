@@ -1286,8 +1286,8 @@ void allNew(int n){
 
     vector<string> fileLstN(fileLst1000.begin(), fileLst1000.begin() + n);
     vector<string> operation{"convolution"};
-    ofstream allF("allF.csv");
-    ofstream allI("allI.csv");
+    ofstream allF("allF.csv",std::ios::app);
+    ofstream allI("allI.csv",std::ios::app);
     scHiCs y = scHiCs(fileLstN, "mm9", 500000, 3, 4000000, true, "except Y",
                       "shortest_score",
                       10, true,
@@ -1394,11 +1394,6 @@ void allNew(int n){
                   "shortest_score",
                   10, true,
                   operation);
-        outF = "y" + to_string(cellC + n);
-        ofstream f;
-        f.open(outF, ios::app);
-        f.write((char *) &y, sizeof(y));
-        f.close();
         innerT = 0.0, innerTt1 = 0.0, innerTt2 = 0.0, innerTt3 = 0.0, innerTt4 = 0.0,
         fastT = 0.0, fastTt1 = 0.0, fastTt2 = 0.0, fastTt3 = 0.0, fastTt4 = 0.0,
         innerTM = 0.0, innerTt1M = 0.0, innerTt2M = 0.0, innerTt3M = 0.0, innerTt4M = 0.0,
@@ -1488,8 +1483,10 @@ void allNew(int n){
              << innerTt2 << " t3: " << innerTt3 << " t4: " << innerTt4
              << endl;
         fout.close();
-        allF<<cellC + n<<","<<fastT<<","<<fastTt1<<","<<fastTt2<<","<<fastTt3<<","<<fastTt4<<"\n";
-        allI<<cellC + n<<","<<innerT<<","<<innerTt1<<","<<innerTt2<<","<<innerTt3<<","<<innerTt4<<"\n";
+        allF<<cellC + n<<","<<fastT<<","<<fastTt1<<","<<fastTt2<<","<<fastTt3<<","
+                                                                               ""<<fastTt4<<endl;
+        allI<<cellC + n<<","<<innerT<<","<<innerTt1<<","<<innerTt2<<","<<innerTt3<<","
+                                                                                   ""<<innerTt4<<endl;
     }
     allF.close();
     allI.close();
