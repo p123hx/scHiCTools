@@ -1636,9 +1636,10 @@ void test(){
     vector<double> tmpD = innerP(chr);
 }
 int main() {
-vector<int> v {100,200,300,400,500,600,700,800,900,1000};
-for(int i:v){
+int i=50;
+while(i<1000){
     toolNew(i);
+    i+=50;
 }
 }
 
