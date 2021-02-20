@@ -107,18 +107,23 @@ void scHiCs::load100(vector<string> &list_of_files, string reference_genome,
                      bool parallelize, int n_processes, bool sparse) {
 
     this->files = list_of_files;
-    this->num_of_cells += list_of_files.size();
+    int n1=this->num_of_cells,n2=list_of_files.size(),n3=n1+n2;
+    this->num_of_cells += n2;
     if (keep_n_strata) {
         for (string ch : this->chromosomes) {
             for (int i = 0; i < keep_n_strata; i++) {
-                this->strata[ch][i] = xt::concatenate(xt::xtuple(this->strata[ch][i],
-                                                                 xt::zeros<double>(
-                                                                         {static_cast<int>(list_of_files.size()),
-                                                                          this->chromosome_lengths[ch] -
-                                                                          i})));
+//                this->strata[ch][i] = xt::concatenate(xt::xtuple(this->strata[ch][i],
+//                                                                 xt::zeros<double>(
+//                                                                         {static_cast<int>(list_of_files.size()),
+//                                                                          this->chromosome_lengths[ch] -
+//                                                                          i})));
+                xt::xarray<double> tmp = xt::zeros<double>({n3,this->chromosome_lengths[ch] - i});
+                xt::view(tmp,xt::range(xt::placeholders::_,n1),xt::all())=this->strata[ch][i];
+                this->strata[ch][i] =tmp;
             }
         }
     }
+
 
     cout << this->num_of_cells << ": Loading HiC data...\n";
     if (parallelize) {

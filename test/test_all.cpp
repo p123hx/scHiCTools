@@ -1526,7 +1526,7 @@ void test(){
     vector<double> tmpD = innerP(chr);
 }
 int main() {
-allNew(1);
+allNew(2);
 }
 
 
