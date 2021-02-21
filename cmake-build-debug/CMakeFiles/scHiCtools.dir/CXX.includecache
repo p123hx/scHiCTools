@@ -6,8 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/Users/bj/CLionProjects/scHiCTools/embedding/reproducibility.h
+/Users/bj/CLionProjects/scHiCTools/embedding/reproducibility.cpp
 utility
+-
+fstream
 -
 xtensor/xio.hpp
 /Users/bj/CLionProjects/scHiCTools/embedding/xtensor/xio.hpp
@@ -15,17 +17,29 @@ xtensor/xview.hpp
 /Users/bj/CLionProjects/scHiCTools/embedding/xtensor/xview.hpp
 xtensor-blas/xlinalg.hpp
 /Users/bj/CLionProjects/scHiCTools/embedding/xtensor-blas/xlinalg.hpp
+float.h
+/Users/bj/CLionProjects/scHiCTools/embedding/float.h
 
-/Users/bj/CLionProjects/scHiCTools/load/ContactMaps.h
-string
--
+/Users/bj/CLionProjects/scHiCTools/load/load_hic_file.cpp
 load_hic_file.h
 /Users/bj/CLionProjects/scHiCTools/load/load_hic_file.h
-vector
+cmath
 -
 set
 -
 map
+-
+string
+-
+fstream
+-
+iostream
+-
+list
+-
+processing_utils.h
+/Users/bj/CLionProjects/scHiCTools/load/processing_utils.h
+filesystem
 -
 
 /Users/bj/CLionProjects/scHiCTools/load/load_hic_file.h
@@ -50,21 +64,27 @@ xtensor/xview.hpp
 xtensor-blas/xlinalg.hpp
 /Users/bj/CLionProjects/scHiCTools/load/xtensor-blas/xlinalg.hpp
 
-/Users/bj/CLionProjects/scHiCTools/test/test_all.cpp
-xtensor/xio.hpp
-/Users/bj/CLionProjects/scHiCTools/test/xtensor/xio.hpp
-../load/ContactMaps.h
-/Users/bj/CLionProjects/scHiCTools/load/ContactMaps.h
-../embedding/reproducibility.h
-/Users/bj/CLionProjects/scHiCTools/embedding/reproducibility.h
-iostream
+/Users/bj/CLionProjects/scHiCTools/load/processing_utils.h
+cmath
+-
+set
+-
+map
+-
+string
 -
 fstream
 -
-random
+iostream
 -
-chrono
+list
 -
+xtensor/xio.hpp
+/Users/bj/CLionProjects/scHiCTools/load/xtensor/xio.hpp
+xtensor/xview.hpp
+/Users/bj/CLionProjects/scHiCTools/load/xtensor/xview.hpp
+xtensor-blas/xlinalg.hpp
+/Users/bj/CLionProjects/scHiCTools/load/xtensor-blas/xlinalg.hpp
 
 /Users/bj/opt/anaconda3/include/xflens/cxxblas/auxiliary/auxiliary.h
 xflens/cxxblas/auxiliary/complex.h

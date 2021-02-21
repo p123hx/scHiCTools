@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/scHiCtools.iml" filepath="$PROJECT_DIR$/.idea/scHiCtools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/scHiCTools.iml" filepath="$PROJECT_DIR$/.idea/scHiCTools.iml" />
     </modules>
   </component>
 </project>

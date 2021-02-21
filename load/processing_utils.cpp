@@ -20,7 +20,39 @@ xt::xarray<double> matrix_operation(xt::xarray<double> mat, vector<string> opera
     }
     return tmp;
 }
-
+//xt::xarray<double> convolution(xt::xarray<double> mat, int kernel_shape) {
+////credit: https://github.com/chaowang15/fast-image-convolution-cpp/blob/master/src/convolution.cpp
+//
+//    xt::xarray<double> conv = xt::ones<double>({kernel_shape, kernel_shape}) / pow
+//            (kernel_shape, 2.0);
+//
+//    xt::xarray<double> outMat = xt::zeros_like(mat);
+//
+//    double temp;
+//    int k, l;
+//    int low_k, high_k, low_l, high_l;
+//
+//    int h_dst = mat.shape(0), w_dst = mat.shape(1);
+//    int h_src = h_dst, w_src = w_dst;
+//    for (int i = 0; i < h_dst; ++i) {
+//        low_k = max(0, i - int(kernel_shape / 2.0));
+//        high_k = min(h_src - i, i + int((kernel_shape - 1.0) / 2.0));
+//        for (int j = 0; j < w_dst; j++) {
+//            low_l = std::max(0, j - int(kernel_shape / 2.0));
+//            high_l = std::min(w_src - 1, j + int((kernel_shape - 1.0) / 2.0));
+//            temp = 0.0;
+//            for (k = low_k; k <= high_k; ++k) {
+//                for (l = low_l; l <= high_l; ++l) {
+//                    temp += mat(k * w_src + l);
+//                }
+//            }
+//            outMat(i * w_dst + j) = temp/pow(kernel_shape, 2.0);
+//        }
+//    }
+//
+//    return outMat;
+//
+//}
 xt::xarray<double> convolution(xt::xarray<double> mat, int kernel_shape) {
 //credit: https://github.com/chaowang15/fast-image-convolution-cpp/blob/master/src/convolution.cpp
 
@@ -36,11 +68,11 @@ xt::xarray<double> convolution(xt::xarray<double> mat, int kernel_shape) {
     int h_dst = mat.shape(0), w_dst = mat.shape(1);
     int h_src = h_dst, w_src = w_dst;
     for (int i = 0; i < h_dst; ++i) {
-        low_k = max(0, i - int((kernel_shape - 1.0) / 2.0));
-        high_k = min(h_src - i, i + int(kernel_shape / 2.0));
+        low_k = max(0, i - int((kernel_shape) / 2.0));
+        high_k = min(h_src - 1, i + int((kernel_shape  - 1.0) / 2.0));
         for (int j = 0; j < w_dst; j++) {
-            low_l = std::max(0, j - int((kernel_shape - 1.0) / 2.0));
-            high_l = std::min(w_src - 1, j + int(kernel_shape / 2.0));
+            low_l = std::max(0, j - int((kernel_shape ) / 2.0));
+            high_l = std::min(w_src - 1, j + int((kernel_shape- 1.0) / 2.0));
             temp = 0.0;
             for (k = low_k; k <= high_k; ++k) {
                 for (l = low_l; l <= high_l; ++l) {
@@ -48,6 +80,7 @@ xt::xarray<double> convolution(xt::xarray<double> mat, int kernel_shape) {
                             conv((i - k + int(kernel_shape / 2.0)) *
                                  kernel_shape +
                                  (j - l + int(kernel_shape / 2.0)));
+//                    temp+=mat(k*w_src+1)/pow(kernel_shape,2);
                 }
             }
             outMat(i * w_dst + j) = temp;

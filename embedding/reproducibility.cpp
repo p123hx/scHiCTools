@@ -77,30 +77,44 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
     int all_size = all_strata.size();
     vector<xt::xarray<double>> tmp;
     xt::xarray<double> distance_mat;
-
+    xt::print_options::set_threshold(1000000000);
     if (similarity_method == "inner_product" or similarity_method == "innerproduct") {
-
         for (xt::xarray<double> stratum : all_strata) {
+//            cout<<stratum<<endl;
             xt::xarray<double> z = zscore_prop(stratum, 1);
-            //??
+//            //??
+//            cout<<z<<endl;
             for (int i = 0; i < z.size(); ++i) {
                 if(isnan(z(i))) z(i)=0.0;
             }
             tmp.push_back(z);
         }
+//        cout<<"zscores:\n";
+
+//        for(xt::xarray<double> t : tmp){
+//            cout<<t<<endl;
+//        }
+//        cout<<endl;
+
         t1 = high_resolution_clock::now();
         zscores = concatenate_axis1(tmp);
+//        cout<<"concatenated:\n"<<zscores;
+
         t2 = high_resolution_clock::now();
         xt::xarray<double> inner = xt::linalg::dot(zscores, xt::transpose(zscores))
                 /zscores.shape(1);
+
+//        cout<<"inner\n"<<inner<<endl;
         t3 = high_resolution_clock::now();
         for (int i = 0; i < inner.size(); i++) {
             if (inner(i) > 1) inner(i) = 1.0;
             if (inner(i) < -1) inner(i) = -1.0;
         }
         distance_mat = xt::sqrt(2 - 2 * inner);
+        cout<<"distance_mat\n"<<distance_mat<<endl;
         t4 = high_resolution_clock::now();
-    } else if (similarity_method == "hicrep") {
+    }
+    else if (similarity_method == "hicrep") {
 
         int n_strata = all_strata.size();
         xt::xarray<double> weighted_std = xt::zeros<double>({n_cells, n_strata});

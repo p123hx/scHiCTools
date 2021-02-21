@@ -1,7 +1,3 @@
-//
-// Created by Bean Juice on 16/12/2020.
-//
-
 #include <string>
 #include "ContactMaps.h"
 #include "load_hic_file.h"
@@ -33,7 +29,7 @@ kernel_shape, int max_distance,
         this->short_range = xt::zeros<double>({this->num_of_cells});
         this->mitotic = xt::zeros<double>({this->num_of_cells});
         this->files = list_of_files;
-
+        xt::print_options::set_threshold(1000000000);
         if (keep_n_strata) {
             for (string ch : this->chromosomes) {
 
@@ -88,7 +84,8 @@ kernel_shape, int max_distance,
                         for (xt::xarray<double> stratum : strata_local) {
                             xt::row(this->strata[ch][strata_idx], idx) = stratum;
                             strata_idx++;
-//                            cout<<stratum<<endl;
+                            cout<<stratum<<endl;
+
                         }
                     }
                 }

@@ -1624,9 +1624,8 @@ void toolNew(int n){
     allI.close();
 }
 void test(){
-    vector<string> fileLst{"../test/data/cell_03","../test/data/cell_01","."
-                                                                         "./test/data/cell_02"};
-    vector<string> operation{"convolution"};
+    vector<string> fileLst{"../NaganoPartial/1CDX1.1/new_adj","../NaganoPartial/1CDX1"
+                                                              ".2/new_adj","../NaganoPartial/1CDX1.3/new_adj"};    vector<string> operation{"convolution"};
 
     scHiCs y = scHiCs(fileLst, "mm9", 500000, 3, 4000000, true, "except Y",
                       "shortest_score",
@@ -1636,11 +1635,7 @@ void test(){
     vector<double> tmpD = innerP(chr);
 }
 int main() {
-int i=50;
-while(i<1000){
-    toolNew(i);
-    i+=50;
-}
+test();
 }
 
 

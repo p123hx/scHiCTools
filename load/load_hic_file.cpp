@@ -207,7 +207,17 @@ pair<xt::xarray<double>, vector<xt::xarray<double>>> load_HiC(string file, map<s
     }
 
     if (operations.empty()){cout<<"Warning: operation empty\n";}
+    xt::print_options::set_threshold(1000000000);
+    xt::print_options::set_line_width(100000000000000);
+    cout<<mat<<endl;
+    //#CHECKED
+
     xt::xarray<double> mat2 = matrix_operation(mat, operations);
+    ofstream f("F.txt");
+    f<<mat2<<endl;
+    f.close();
+//    cout<<mat2<<endl;
+//CHECKED
     vector<xt::xarray<double>> strata = vector<xt::xarray<double>>();
     if (keep_n_strata) {
         int matSize = mat2.shape(0);
@@ -216,6 +226,8 @@ pair<xt::xarray<double>, vector<xt::xarray<double>>> load_HiC(string file, map<s
                                                                    xt::placeholders::_),
                                                xt::range(xt::placeholders::_,
                                                          matSize - i))));
+//            cout<<strata[i]<<endl;
+
         }
     } else{
         throw "Not implemented yet";
