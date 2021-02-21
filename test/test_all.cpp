@@ -5,6 +5,7 @@
 #include <fstream>
 #include <random>
 #include <chrono>
+
 using namespace std;
 
 vector<double> innerP(vector<xt::xarray<double>> all_strata) {
@@ -42,7 +43,8 @@ double oldHicP(vector<xt::xarray<double>> all_strata) {
 //    cout << "pairwise dis: " << pair_dis << endl;
     return times[0];
 }
-vector<string> f1000(){
+
+vector<string> f1000() {
     return vector<string>{"../../Nagano/1CDX_cells/1CDX1.1/new_adj",
                           "../../Nagano/1CDX_cells/1CDX1.185/new_adj",
                           "../../Nagano/1CDX_cells/1CDX1.281/new_adj",
@@ -1215,6 +1217,7 @@ vector<string> f1000(){
                           "../../Nagano/1CDX_cells/1CDX4.391/new_adj",
                           "../../Nagano/1CDX_cells/1CDX4.467/new_adj"};
 }
+
 /*void toolN(int n){
     vector<string> fileLst1000 = f1000();
     vector<string>fileLstN (fileLst1000.begin(),fileLst1000.begin()+n);
@@ -1279,15 +1282,15 @@ void test(){
 
     cout << "Total average fastHiCrep test " << tsum<< " in milliseconds\n";
 }*/
-void allNew(int n){
+void allNew(int n) {
     vector<string> fileLst1000 = f1000();
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     shuffle(fileLst1000.begin(), fileLst1000.end(), std::default_random_engine(seed));
 
     vector<string> fileLstN(fileLst1000.begin(), fileLst1000.begin() + n);
     vector<string> operation{"convolution"};
-    ofstream allF("allF.csv",std::ios::app);
-    ofstream allI("allI.csv",std::ios::app);
+    ofstream allF("allF.csv", std::ios::app);
+    ofstream allI("allI.csv", std::ios::app);
     scHiCs y = scHiCs(fileLstN, "mm9", 500000, 3, 4000000, true, "except Y",
                       "shortest_score",
                       10, true,
@@ -1384,9 +1387,9 @@ void allNew(int n){
          << innerTt2 << " t3: " << innerTt3 << " t4: " << innerTt4
          << endl;
     fout.close();
-    allF<<n<<","<<fastT<<","<<fastTt1<<","<<fastTt2<<","<<fastTt3<<","<<fastTt4<<endl;
-    allI<<n<<","<<innerT<<","<<innerTt1<<","<<innerTt2<<","<<innerTt3<<","
-                                                                       ""<<innerTt4<<endl;
+    allF << n << "," << fastT << "," << fastTt1 << "," << fastTt2 << "," << fastTt3 << "," << fastTt4 << endl;
+    allI << n << "," << innerT << "," << innerTt1 << "," << innerTt2 << "," << innerTt3 << ","
+                                                                                           "" << innerTt4 << endl;
     for (int cellC = n; cellC < 1000; cellC += n) {
         vector<string> fileLst100(fileLst1000.begin() + cellC, fileLst1000.begin() +
                                                                n + cellC);
@@ -1483,14 +1486,15 @@ void allNew(int n){
              << innerTt2 << " t3: " << innerTt3 << " t4: " << innerTt4
              << endl;
         fout.close();
-        allF<<cellC + n<<","<<fastT<<","<<fastTt1<<","<<fastTt2<<","<<fastTt3<<","
-                                                                               ""<<fastTt4<<endl;
-        allI<<cellC + n<<","<<innerT<<","<<innerTt1<<","<<innerTt2<<","<<innerTt3<<","
-                                                                                   ""<<innerTt4<<endl;
+        allF << cellC + n << "," << fastT << "," << fastTt1 << "," << fastTt2 << "," << fastTt3 << ","
+                                                                                                   "" << fastTt4 << endl;
+        allI << cellC + n << "," << innerT << "," << innerTt1 << "," << innerTt2 << "," << innerTt3 << ","
+                                                                                                       "" << innerTt4 << endl;
     }
     allF.close();
     allI.close();
 }
+
 void testNew() {
     vector<string> fileLst{"../test/data/cell_03"};
     vector<string> operation{"convolution"};
@@ -1512,15 +1516,16 @@ void testNew() {
     vector<xt::xarray<double>> chr = y.get_strata()["chr1"];
     vector<double> tmpD = innerP(chr);
 }
-void toolNew(int n){
+
+void toolNew(int n) {
     vector<string> fileLst1000 = f1000();
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     shuffle(fileLst1000.begin(), fileLst1000.end(), std::default_random_engine(seed));
 
     vector<string> fileLstN(fileLst1000.begin(), fileLst1000.begin() + n);
     vector<string> operation{"convolution"};
-    ofstream allF("allF.csv",std::ios::app);
-    ofstream allI("allI.csv",std::ios::app);
+    ofstream allF("allF.csv", std::ios::app);
+    ofstream allI("allI.csv", std::ios::app);
     scHiCs y = scHiCs(fileLstN, "mm9", 500000, 3, 4000000, true, "except Y",
                       "shortest_score",
                       10, true,
@@ -1617,15 +1622,17 @@ void toolNew(int n){
          << innerTt2 << " t3: " << innerTt3 << " t4: " << innerTt4
          << endl;
     fout.close();
-    allF<<n<<","<<fastT<<","<<fastTt1<<","<<fastTt2<<","<<fastTt3<<","<<fastTt4<<endl;
-    allI<<n<<","<<innerT<<","<<innerTt1<<","<<innerTt2<<","<<innerTt3<<","
-                                                                       ""<<innerTt4<<endl;
+    allF << n << "," << fastT << "," << fastTt1 << "," << fastTt2 << "," << fastTt3 << "," << fastTt4 << endl;
+    allI << n << "," << innerT << "," << innerTt1 << "," << innerTt2 << "," << innerTt3 << ","
+                                                                                           "" << innerTt4 << endl;
     allF.close();
     allI.close();
 }
-void test(){
-    vector<string> fileLst{"../NaganoPartial/1CDX1.1/new_adj","../NaganoPartial/1CDX1"
-                                                              ".2/new_adj","../NaganoPartial/1CDX1.3/new_adj"};    vector<string> operation{"convolution"};
+
+void test() {
+    vector<string> fileLst{"../NaganoPartial/1CDX1.1/new_adj", "../NaganoPartial/1CDX1"
+                                                               ".2/new_adj", "../NaganoPartial/1CDX1.3/new_adj"};
+    vector<string> operation{"convolution"};
 
     scHiCs y = scHiCs(fileLst, "mm9", 500000, 3, 4000000, true, "except Y",
                       "shortest_score",
@@ -1634,8 +1641,12 @@ void test(){
     vector<xt::xarray<double>> chr = y.get_strata()["chr1"];
     vector<double> tmpD = innerP(chr);
 }
+
 int main() {
-test();
+    vector<int> v{100, 200, 300, 400, 500, 600, 700, 800, 900, 1000};
+    for (int i:v) {
+        allNew(i);
+    }
 }
 
 
