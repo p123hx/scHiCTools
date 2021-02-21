@@ -111,7 +111,7 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
             if (inner(i) < -1) inner(i) = -1.0;
         }
         distance_mat = xt::sqrt(2 - 2 * inner);
-        cout<<"distance_mat\n"<<distance_mat<<endl;
+//        cout<<"distance_mat\n"<<distance_mat<<endl;
         t4 = high_resolution_clock::now();
     }
     else if (similarity_method == "hicrep") {
