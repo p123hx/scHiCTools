@@ -175,7 +175,7 @@ pairwise_distance(vector<xt::xarray<double>> all_strata, string similarity_metho
                         weights(ind_old) = (n_bins * xt::stddev(s1)() *
                                             xt::stddev(s2)());
                         corrs(ind_old) = (pearsoncoeff(s1, s2, n_bins));
-                        cout<<"corr: "<<corrs(ind_old)<<endl;
+//                        cout<<"corr: "<<corrs(ind_old)<<endl;
                     }
                     ind_old++;
                 }

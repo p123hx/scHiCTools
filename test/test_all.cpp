@@ -30,7 +30,7 @@ double selfishP(vector<xt::xarray<double>> all_strata) {
     vector<double> times;
     tie(pair_dis, times) =
             pairwise_distance(all_strata, "selfish");
-    cout << "pairwise dis: " << pair_dis << endl;
+//    cout << "pairwise dis: " << pair_dis << endl;
     return times[0];
 }
 

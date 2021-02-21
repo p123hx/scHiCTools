@@ -84,7 +84,7 @@ kernel_shape, int max_distance,
                         for (xt::xarray<double> stratum : strata_local) {
                             xt::row(this->strata[ch][strata_idx], idx) = stratum;
                             strata_idx++;
-                            cout<<stratum<<endl;
+//                            cout<<stratum<<endl;
 
                         }
                     }

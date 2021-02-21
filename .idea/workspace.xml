@@ -12,8 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a6d3ee-8d02-4178-8fd1-635eb86b7080" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/embedding/reproducibility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/embedding/reproducibility.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load/ContactMaps.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/ContactMaps.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load/load_hic_file.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/load/load_hic_file.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_all.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_all.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613837097140</updated>
       <workItem from="1613837098393" duration="8472000" />
-      <workItem from="1613887261241" duration="924000" />
+      <workItem from="1613887261241" duration="1290000" />
     </task>
     <servers />
   </component>
